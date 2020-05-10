@@ -10,10 +10,10 @@
 
          <div class="col-xs-6 col-sm-4 col-md-4 text-center">
          <ul id="myUL" class="lista pater" style="padding-right: 0px;
-   padding-left: 0px;
-   padding-bottom: 0px;
-   padding-top: 0px;
-   margin: 0px;">
+            padding-left: 0px;
+            padding-bottom: 0px;
+            padding-top: 0px;
+            margin: 0px;">
          @foreach( $activitas as $key => $activitat )
          <li style="list-style:none;">
                     <div class="card" style="margin:5px 0 10px 0;">
@@ -25,7 +25,7 @@
                         <p class="card-text">Escola: {{Auth::user()->escola}}</p>
                         <p class="card-text"style="display:none"><a>{{$activitat->nom_activitat}} {{Auth::user()->escola}}</a></p>
                         @if($activitat->tipus_id==1)
-                            <a href="{{ url('/activitats/show/'.$activitat->id) }}" class="btn btn-primary">Comença</a>
+                            <a href="{{ url('/activitats1/show/'.$activitat->id) }}" class="btn btn-primary">Comença</a>
                         @else
                             <a href="{{ url('/activitats2/show/'.$activitat->id) }}" class="btn btn-primary">Comença</a>
                         @endif
@@ -42,5 +42,5 @@
 @endsection
 @section('scripts')
 <script src="{{ asset('Script/activitat.js') }}" defer></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 @endsection

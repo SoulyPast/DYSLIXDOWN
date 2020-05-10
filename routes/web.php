@@ -32,6 +32,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/prueba','HomeController@prueba');
     Route::get('/activitats','activitats@index');
     Route::get('/activitats/show/{id}', 'activitats@getShow');
+    Route::get('/activitats1/show/{id}', 'activitats@getShow');
+    Route::get('/activitats1/ajax/{id}', 'activitats@getShowajax');
     Route::post('/activitats/create','activitats@postCreate');
     Route::get('/activitats/create','activitats@getCreate');
     Route::get('/perfil','perfilcontroller@index');

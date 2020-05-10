@@ -12,7 +12,6 @@
 </ul>
 <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-
   <div class="content border border-primary">
 <button type="button" name="nombre1" class="rounded-circle rounded-sm border border-danger d-flex p-2 justify-content-center btn Exercici1" style="height:50px;width:50px;">H</button>
 <button type="button" class="rounded-circle rounded-sm border border-danger d-flex p-2 justify-content-center btn Exercici1" style="height:50px;width:50px;">O</button>

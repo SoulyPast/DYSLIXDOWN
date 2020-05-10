@@ -5,6 +5,7 @@ use App\User;
 use App\Activitat;
 use App\Tipus;
 use App\Nivell;
+use App\Exercici;
 use DateTime;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -21,10 +22,16 @@ class activitats extends Controller
     // mostra una activitat per id
     public function getShow($id){
         $activitas=Activitat::findOrFail($id);
-        return view('activitats.show',array('activitas' => $activitas));
-
+        $exercici=Exercici::all()->where('activitat_id','=',$id);
+        return view('activitats1.show',array('activitas' => $activitas),array('exercici' => $exercici));
+       //return view('activitats1.show', response()->json(array('activitas' => $activitas), 200));
+       // return response(view('activitats1.show',json(array('activitas'=>$activitas))),200);
     }
 
+    public function getShowajax($id){
+        $exercici=Exercici::all()->where('activitat_id','=',$id);
+        return  response()->json(array('exercici' => $exercici), 200);
+    }
 
     public function getCreate(Request $request){
         $request->USER()->authorizeRoles('professor');
