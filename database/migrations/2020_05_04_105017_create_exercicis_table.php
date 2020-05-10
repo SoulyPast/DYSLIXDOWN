@@ -17,18 +17,19 @@ class CreateExercicisTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('activitat_id')->unisgned();
             $table->string('resposta');
-            $table->string('opcio1');
-            $table->string('opcio2');
-            $table->string('opcio3');
-            $table->string('opcio4');
-            $table->string('opcio5');
-            $table->string('opcio6');
-            $table->string('opcio7');
+            $table->string('opcio1')->nullable();
+            $table->string('opcio2')->nullable();
+            $table->string('opcio3')->nullable();
+            $table->string('opcio4')->nullable();
+            $table->string('opcio5')->nullable();
+            $table->string('opcio6')->nullable();
+            $table->string('opcio7')->nullable();
+            $table->timestamps();
         });
 
         Schema::table('exercicis', function ($table)
         {
-            $table->foreign('activitat_id')->references('id')->on('activitats');
+            $table->foreign('activitat_id')->references('id')->on('activitats')->onDelete('cascade');;
         });
 
     }

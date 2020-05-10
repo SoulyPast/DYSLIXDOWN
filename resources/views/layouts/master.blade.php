@@ -11,6 +11,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>DYSLIXDOWN</title>
   </head>
+  <style>
+      .navbar-collapse.collapse.in {
+  display: block!important;
+}
+
+  </style>
   <body>
     @include('partials.navbar')
     <br>

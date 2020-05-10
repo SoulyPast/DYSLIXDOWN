@@ -1,6 +1,7 @@
 @extends('layouts.master')
 @section('content')
-<h1>{{$activitas->nom_activitat}} : {{$activitas->categoria_activiatat}}</h1>
+<h1>{{$activitas->nom_activitat}} </h1>
+<h2 class = "{{$activitas->tipus->nom_tipus}}"> {{$activitas->tipus->nom_tipus}}</h2>
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true" >Exercici1</a>
@@ -30,7 +31,6 @@
   </div>
 
 </div>
-
 @endsection
 @section('scripts')
 <script src="{{ asset('Script/Forma.js') }}" defer></script>

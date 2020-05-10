@@ -17,8 +17,8 @@ class CreateActivitatsTable extends Migration
             $table->increments('id');
             $table->string('nom_activitat');
             $table->string('descripcio_activiatat');
-            $table->boolean('acabat')->default(true);
-            $table->boolean('public')->default(true);
+            $table->boolean('acabat')->default(false);
+            $table->boolean('public');
             $table->integer('codi');
             $table->unsignedBigInteger('user_id')->unisgned();
             $table->unsignedInteger('nivell_id')->unisgned();
@@ -27,9 +27,9 @@ class CreateActivitatsTable extends Migration
         });
 
         Schema::table('activitats', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('nivell_id')->references('id')->on('nivells');
-            $table->foreign('tipus_id')->references('id')->on('tipuses');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
+            $table->foreign('nivell_id')->references('id')->on('nivells')->onDelete('cascade');;
+            $table->foreign('tipus_id')->references('id')->on('tipuses')->onDelete('cascade');;
         });
     }
 

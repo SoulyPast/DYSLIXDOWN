@@ -1,28 +1,31 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-<a class="navbar-brand" href="/" style="color:#777"><img src="http://127.0.0.1:8000/Imatges/Logo/Logo.png" alt="Logo"  class="img-responsive"></a>
-    <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-lg  navbar-light bg-light static-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+        <img src="http://127.0.0.1:8000/Imatges/Logo/Logo.png" alt="Logo"  class="img-responsive">
+        </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
-
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarResponsive">
             @if(Auth::check())
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item {{ Request::is('catalog') && ! Request::is('catalog/create')? 'active' : ''}}">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
                         <a class="nav-link" href="{{url('/activitats')}}">
                             <span class="glyphicon glyphicon-list-alt"></span> Activitats
                         </a>
                     </li>
                     @if(Auth::user()->hasRole('professor'))
-                    <li class="nav-item {{  Request::is('catalog/create') ? 'active' : ''}}">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('/LesMevesActivitats')}}">
+                            <span></span> Les meves activitats
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{url('/activitats/create')}}">
                             <span>&#10010</span> Nueva Activitat
                         </a>
                     </li>
                     @endif
-                </ul>
-                <ul class="navbar-nav navbar-right">
                 <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -43,7 +46,7 @@
                                 </div>
 
                             </li>
-                </ul>
+
                 @endif
                 @if(!Auth::check())
                 <ul class="navbar-nav mr-auto">
@@ -58,6 +61,5 @@
                 </ul>
                 @endif
             </div>
-
     </div>
 </nav>

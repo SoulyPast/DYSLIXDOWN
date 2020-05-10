@@ -1,3 +1,4 @@
+if($("h2").hasClass("Formant")){
 myFunction("Exercici1");
 $(".nav-link").click(function(){
     var exe = ($(this).text());
@@ -32,7 +33,7 @@ $(".reset"+exe).click(function(){
     $("."+exe).removeAttr("disabled");
 });
 }
-
+}
 
 
 

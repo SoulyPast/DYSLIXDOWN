@@ -18,12 +18,13 @@ class CreateResultatsTable extends Migration
             $table->Integer('puntuacio');
             $table->unsignedBigInteger('user_id')->unisgned();
             $table->unsignedInteger('activitat_id')->unisgned();
-            $table->String('eroors');
+            $table->text('eroors');
+            $table->timestamps();
         });
 
         Schema::table('resultats', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('activitat_id')->references('id')->on('activitats');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
+            $table->foreign('activitat_id')->references('id')->on('activitats')->onDelete('cascade');;
 
         });
     }

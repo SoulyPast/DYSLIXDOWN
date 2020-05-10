@@ -29,12 +29,18 @@
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Selecciona el tipus :</label>
                         <select class="form-control"  name="tipus" id="tipus" style="height:40px">
+                        @foreach( $Tipus as $key => $tipu )
+                        <option>{{$tipu->nom_tipus}}</option>
+                        @endforeach
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Selecciona el nivell :</label>
                         <select class="form-control"  name="nivell" id="nivell" style="height:40px">
+                        @foreach( $Nivells as $key => $Nivell )
+                        <option>{{$Nivell->nom_nivell}}</option>
+                        @endforeach
                         </select>
                     </div>
 

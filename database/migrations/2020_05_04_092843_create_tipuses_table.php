@@ -17,6 +17,7 @@ class CreateTipusesTable extends Migration
             $table->increments('id');
             $table->string('nom_tipus');
             $table->string('descripcio_tipus');
+            $table->timestamps();
         });
     }
 

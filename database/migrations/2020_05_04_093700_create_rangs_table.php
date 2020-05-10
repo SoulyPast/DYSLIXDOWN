@@ -22,7 +22,7 @@ class CreateRangsTable extends Migration
         });
 
         Schema::table('rangs', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
         });
 
     }

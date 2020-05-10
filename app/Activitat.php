@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Activitat extends Model
 {
     protected $casts = [
-        "acabat" => "boolean",
-        "public" => "boolean",
+
+
     ];
 
     protected $fillable = [
-        'nom_activitat', 'descripcio_activiatat', 'user_id','tipus_id','nivell_id','codi'
+        'nom_activitat', 'descripcio_activiatat', 'user_id','tipus_id','nivell_id','codi',"public","acabat"
     ];
 
     public function user()

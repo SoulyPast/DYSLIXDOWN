@@ -17,6 +17,7 @@ class CreateNivellsTable extends Migration
             $table->increments('id');
             $table->string('nom_nivell');
             $table->string('descripcio_nivell');
+            $table->timestamps();
         });
     }
 
