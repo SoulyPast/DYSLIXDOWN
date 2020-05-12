@@ -24,7 +24,7 @@
 
 					<div class="form-group">
                     <label for="descripcio">Descripció</label>
-                    <input type="text" name="descripcio" id="descripcio" class="form-control" value="{{$activitat->descripcio_activiatat}}">
+                    <textarea type="text" name="descripcio" id="descripcio" class="form-control" value="">{{$activitat->descripcio_activiatat}}</textarea>
 					</div>
 
                     <div class="form-group">

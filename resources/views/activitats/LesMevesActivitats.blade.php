@@ -40,6 +40,7 @@
       <a type="button" class="btn btn-success mt-1" href="{{ url('/activitat/show2Exercicis/'.$activitat->id) }}">Exercicis</a>
       @endif
 
+
       <form action="{{ action('activitats@deleteActivitats', $activitat->id) }}" method="POST" style="display:inline">
                     {{ method_field('DELETE') }}
                     {{ csrf_field() }}

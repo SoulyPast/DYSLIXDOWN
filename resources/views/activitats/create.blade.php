@@ -18,12 +18,12 @@
 
             <div class="form-group">
   					<label for="nom">Nom</label>
-  					<input type="text" name="nom" id="nom" class="form-control">
+  					<input type="text" name="nom" id="nom" class="form-control" required>
 					</div>
 
 					<div class="form-group">
                     <label for="descripcio">Descripció</label>
-                    <input type="text" name="descripcio" id="descripcio" class="form-control">
+                    <textarea type="text" name="descripcio" id="descripcio" class="form-control" required></textarea>
 					</div>
 
                     <div class="form-group">
