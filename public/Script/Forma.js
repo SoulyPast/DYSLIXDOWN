@@ -116,32 +116,43 @@ function getMessage() {
             nume++;
             if(nume<keys.length){
                 Info(nume);
-
             }
             else{
-                console.log(arrayresultatsserver);
-                console.log(arrayresultatsuser);
                 count=0;
+                arrayuser=[];
                 for (let index = 0; index < arrayresultatsuser.length; index++) {
                     const element = arrayresultatsuser[index].replace(/,/g, '');
+                    arrayuser.push(element);
                     if(element == arrayresultatsserver[index]){
                     count++;
                     }
                 }
+                var punts = 0;
                 if((arrayresultatsuser.length/2)>count){
-                    console.log("mal");
+                    punts=1;
                     $('#1').css("display", "block");
                 }
                 else if((arrayresultatsuser.length)==count){
-                    console.log("molt-bé");
                     $('#3').css("display", "block");
+                    punts=3;
                 }
                 else{
-                    console.log("bé");
                     $('#2').css("display", "block");
+                    punts=2;
                 }
-                console.log(exercicis[keys[0]].activitat_id);
-                console.log($('.auth').text());
+
+                var puntuacio = punts;
+                var user_id = $('.auth').text();
+                var activitat_id = exercicis[keys[0]].activitat_id;
+                var eroors = arrayuser.toString();
+                $.ajax({
+                       type: "POST",
+                       url:"/resultat/ajax",
+                       data:{"puntuacio":puntuacio,"user_id":user_id,"activitat_id":activitat_id,"eroors":eroors},
+                       success:function(data){
+
+                       }
+                    });
             }
         });
 
@@ -180,13 +191,32 @@ changeRating.forEach((radio) => {
 });
 
 // buscar el radiobutton checked y armar el texto con el valor ( 0 - 5 )
+var estrellas=0;
 function getRating() {
-  let estrellas = document.querySelector('input[name=rating]:checked').value;
+    estrellas = document.querySelector('input[name=rating]:checked').value;
   document.getElementById("texto").innerHTML = (
     0 < estrellas ?
     estrellas + " estrella" + (1 < estrellas ? "s" : "") :
     "sin calificar"
   );
-console.log(estrellas);
-  // opcionalmente agregar un ajax para guardar el rating
-}
+
+  if(estrellas>0){
+    $("#valorar").removeAttr("disabled");
+  }
+
+  else{
+    $("#valorar").setAttribute("disabled", "true");
+  }
+
+    // opcionalmente agregar un ajax para guardar el rating
+    }
+    $("#valorar").click(function(){
+        console.log(estrellas);
+
+    });
+
+
+
+
+
+

@@ -33,78 +33,62 @@
 @endforeach
 </ul>
 <div class="tab-content " id="pills-tabContent" style="background-image: url('https://i.pinimg.com/originals/4a/96/e6/4a96e602750b8ef669a77565becf3939.gif');text-align:center;">
-
 </div>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Valoració :</button>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap</button>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Valoració :</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h5 class="modal-title" id="exampleModalLabel">Valoració</h5>
       </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-          <input id=rating0 type=radio value=0 name=rating checked />
+      <div class="modal-body text-center">
+      <input id=rating0 type=radio value=0 name=rating checked />
 
-<label class=star for=rating1>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 275">
-<path stroke="#605a00" stroke-width="15"
-  d="M150 25l29 86h90l-72 54 26 86-73-51-73 51 26-86-72-54h90z"/>
-</svg>
-</label>
-<input id=rating1 type=radio value=1 name=rating />
-
-<label class=star for=rating2>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 275">
-<path stroke="#605a00" stroke-width="15"
- d="M150 25l29 86h90l-72 54 26 86-73-51-73 51 26-86-72-54h90z"/>
-</svg>
-</label>
-<input id=rating2 type=radio value=2 name=rating />
-
-<label class=star for=rating3>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 275">
-<path stroke="#605a00" stroke-width="15"
- d="M150 25l29 86h90l-72 54 26 86-73-51-73 51 26-86-72-54h90z"/>
-</svg>
-</label>
-<input id=rating3 type=radio value=3 name=rating />
-
-<label class=star for=rating4>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 275">
-<path stroke="#605a00" stroke-width="15"
- d="M150 25l29 86h90l-72 54 26 86-73-51-73 51 26-86-72-54h90z"/>
-</svg>
-</label>
-<input id=rating4 type=radio value=4 name=rating />
-
-<label class=star for=rating5>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 275">
-<path stroke="#605a00" stroke-width="15"
- d="M150 25l29 86h90l-72 54 26 86-73-51-73 51 26-86-72-54h90z"/>
-</svg>
-</label>
-<input id=rating5 type=radio value=5 name=rating />
-
-<!-- por último el label del rating 0 ( sin calificar ) -->
-
-
-<div id=texto style="display:none">sin calificar</div>
-          <div class="form-group">
-            <textarea class="form-control" id="message-text"  placeholder="Introdueix el teu comentari:"></textarea>
-          </div>
-        </form>
+        <label class=star for=rating1>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 275">
+        <path stroke="#605a00" stroke-width="15"
+        d="M150 25l29 86h90l-72 54 26 86-73-51-73 51 26-86-72-54h90z"/>
+        </svg>
+        </label>
+        <input id=rating1 type=radio value=1 name=rating />
+        <label class=star for=rating2>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 275">
+        <path stroke="#605a00" stroke-width="15"
+        d="M150 25l29 86h90l-72 54 26 86-73-51-73 51 26-86-72-54h90z"/>
+        </svg>
+        </label>
+        <input id=rating2 type=radio value=2 name=rating />
+        <label class=star for=rating3>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 275">
+        <path stroke="#605a00" stroke-width="15"
+        d="M150 25l29 86h90l-72 54 26 86-73-51-73 51 26-86-72-54h90z"/>
+        </svg>
+        </label>
+        <input id=rating3 type=radio value=3 name=rating />
+        <label class=star for=rating4>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 275">
+        <path stroke="#605a00" stroke-width="15"
+        d="M150 25l29 86h90l-72 54 26 86-73-51-73 51 26-86-72-54h90z"/>
+        </svg>
+        </label>
+        <input id=rating4 type=radio value=4 name=rating />
+        <label class=star for=rating5>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 275">
+        <path stroke="#605a00" stroke-width="15"
+        d="M150 25l29 86h90l-72 54 26 86-73-51-73 51 26-86-72-54h90z"/>
+        </svg>
+        </label>
+        <input id=rating5 type=radio value=5 name=rating >
+        <div id=texto style="display:none">sin calificar</div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="button" id="valorar" class="btn btn-primary"  data-dismiss="modal" aria-label="Close" disabled>Enviar</button>
       </div>
     </div>
   </div>
+</div>
 </div>
 @endsection
 @section('scripts')

@@ -141,8 +141,27 @@ input[type=radio]+label.star svg path {
 input[type=radio]:checked~label.star svg path {
   fill: #fff;
 }
+
+
+.font {
+        background-image:  url("https://images.unsplash.com/photo-1564089915105-db97895bdd78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1000;
+        overflow: hidden;
+    }
   </style>
-  <body>
+  <body >
+      <div class="font"></div>
     @include('partials.navbar')
     <br>
     <div class="container" class="mt-4">

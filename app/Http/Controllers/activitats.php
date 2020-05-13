@@ -6,6 +6,7 @@ use App\Activitat;
 use App\Tipus;
 use App\Nivell;
 use App\Exercici;
+use App\Resultat;
 use DateTime;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -117,6 +118,16 @@ class activitats extends Controller
 
     }
 
+    public function postajax( Request $data ){
+       Resultat::create([
+            'puntuacio' => $data['puntuacio'],
+            'user_id' => $data['user_id'],
+            'activitat_id' => $data['activitat_id'],
+            'eroors' => $data['eroors']
+            ]);
 
+        return response()->json(['success'=>$data['eroors']]);
+
+    }
 
 }

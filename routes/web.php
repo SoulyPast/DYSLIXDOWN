@@ -57,6 +57,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/activitat/show2Exercicis/{id}', 'exercicis2@postcreate');
     Route::put('/activitat/show2ExercicisEdit/{id}', 'exercicis2@putexercici');
     Route::delete('/activitat/show2Exercicis/{id}', 'exercicis2@deletexercici');
+    Route::post('/resultat/ajax', 'activitats@postajax');
 });
 
 
