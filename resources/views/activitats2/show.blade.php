@@ -102,6 +102,6 @@
 @endsection
 
 @section('scripts')
-<script src="{{ asset('Script/Forma.js') }}" defer></script>
+<script src="{{ asset('Script/Forma2.js') }}" defer></script>
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
 @endsection

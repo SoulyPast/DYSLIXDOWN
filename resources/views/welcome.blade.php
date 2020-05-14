@@ -419,8 +419,7 @@
 }
 
 body{
-    background-color: #F6FAFF;
-    background-color: black;
+
 }
 
 .p{
@@ -457,10 +456,21 @@ body{
   top:90%;
 }
 
+body {
+        background-image:  url("https://images.unsplash.com/photo-1564089915105-db97895bdd78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+
+    }
         </style>
     </head>
     <body>
     @include('partials.navbar')
+
+
     <div class="container mt-5">
     <div class="row mt-5" >
     <div class="col mt-5">
@@ -494,9 +504,9 @@ body{
     </div>
     </div>
 
-    <div class="p p-1"></div>
-    <div class="p p-2"></div>
-    <div class="p p-3"></div>
+    <div class="p p-"></div>
+    <div class="p p-"></div>
+    <div class="p p-"></div>
 
 
     </body>

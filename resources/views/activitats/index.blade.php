@@ -5,20 +5,21 @@
     <input type="text" class="form-control" placeholder="Cercar" id="myInput" onkeyup="myFunction()">
   </div>
 
-<div class="row" class="text-center">
+<div class="row" class="text-center" style="algin-text:center">
 
 
-         <div class="col-xs-6 col-sm-4 col-md-4 text-center">
-         <ul id="myUL" class="lista pater" style="padding-right: 0px;
+         <div class="ml-3">
+         <ul id="myUL" class="lista pater " style="padding-right: 0px;
             padding-left: 0px;
             padding-bottom: 0px;
             padding-top: 0px;
-            margin: 0px;">
+            margin: 0px;
+            display: flex;flex-wrap: wrap;text-align:center;justify-content: center;">
          @foreach( $activitas as $key => $activitat )
-         <li style="list-style:none;">
+         <li style="list-style:none;"class=" mr-3">
                     <div class="card" style="margin:5px 0 10px 0;">
                     <img src="http://127.0.0.1:8000/Imatges/Logo/Logo.png" class="card-img-top" style="width:200px;height:80px;margin-left:20%">
-                    <div class="card-body">
+                    <div class="card-body" style="width:350px; height:250px">
                         <h5 class="card-title">{{$activitat->nom_activitat}}</h5>
                         <p class="card-text">Tipus: {{$activitat->tipus->nom_tipus}}</p>
                         <p class="card-text">Nivell: {{$activitat->nivell->nom_nivell}}</p>

@@ -24,9 +24,12 @@ class activitats extends Controller
     public function getShow($id){
         $activitas=Activitat::findOrFail($id);
         $exercici=Exercici::all()->where('activitat_id','=',$id);
+        if($activitas->tipus_id==1){
         return view('activitats1.show',array('activitas' => $activitas),array('exercici' => $exercici));
-       //return view('activitats1.show', response()->json(array('activitas' => $activitas), 200));
-       // return response(view('activitats1.show',json(array('activitas'=>$activitas))),200);
+        }
+        else{
+        return view('activitats2.show',array('activitas' => $activitas),array('exercici' => $exercici));
+        }
     }
 
     public function getShowajax($id){

@@ -27,8 +27,10 @@ function getMessage() {
        data:'_token = <?php echo csrf_token() ?>',
        success:function(data) {
         var exercicis = JSON.parse(JSON.stringify(data.exercici));
+        console.log(exercicis);
         var keys = Object.keys(exercicis);
         for (var i = 0, len = keys.length; i < len; i++) {
+
           var tag = document.createElement("div");
           arrayresultatsserver.push(exercicis[keys[i]].resposta);
           tag.setAttribute("class", "tab-pane fade");
@@ -42,19 +44,32 @@ function getMessage() {
           var paraula= exercicis[keys[i]].resposta;
           cont=1;
           arraychar=[];
+          arrayf=[];
           for (let index = 1; index < paraula.length+1; index++) {
               var char = paraula.substring(cont-1, index);
               arraychar.push(char);
               cont=cont+1;
           }
-          newarry=shuffle(arraychar);
+
+            arrayf.push(exercicis[keys[i]].opcio1);
+            arrayf.push(exercicis[keys[i]].opcio2);
+            arrayf.push(exercicis[keys[i]].opcio3);
+            arrayf.push(exercicis[keys[i]].opcio4);
+            arrayf.push(exercicis[keys[i]].opcio5);
+            arrayf.push(exercicis[keys[i]].opcio6);
+            arrayf.push(exercicis[keys[i]].opcio7);
+            arrayf.push(exercicis[keys[i]].resposta);
+            myArrClean = arrayf.filter(Boolean);
+            console.log(myArrClean);
+
+          newarry=shuffle(myArrClean);
           var div0 = document.createElement("div");
           div0.setAttribute("class", "content");
 
           for (let x = 0; x < newarry.length; x++) {
             var div1 = document.createElement("button");
             div1.setAttribute("class", "rounded-circle text-uppercase mt-5 mb-5 ml-5 mr-5 text-center rounded-sm border border-primary  btn Exercici"+exercicis[keys[i]].id);
-            div1.setAttribute("style", "height:50px;width:50px; display: block;");
+            div1.setAttribute("style", "height:150px;width:150px; display: block;");
             div1.setAttribute("type", "button");
             div.appendChild(div1);
             var text = document.createTextNode(newarry[x]);
@@ -122,7 +137,7 @@ function getMessage() {
                     $('#2').css("display", "block");
                     punts=2;
                 }
-
+                console.log(arrayuser);
                 var puntuacio = punts;
                 user_id = $('.auth').text();
                 activitat_id = exercicis[keys[0]].activitat_id;
@@ -153,11 +168,11 @@ function getMessage() {
             $(".Exercici"+exercicis[keys[num]].id).click(function(){
                 arraytext.push($(this).text());
                 $("#Exercici"+exercicis[keys[num]].id).text(arraytext);
-                if(exercicis[keys[num]].resposta.length==arraytext.length){
+
                     $(".seguentExercici"+exercicis[keys[num]].id).removeAttr("disabled");
                     //console.log(arraytext);
-                }
-                $(this).attr("disabled", true);
+
+                $(".Exercici"+exercicis[keys[num]].id).attr("disabled", true);
                 });
                 $(".resetExercici"+exercicis[keys[num]].id).click(function(){
                     arraytext=[];
@@ -209,5 +224,4 @@ function getRating() {
          });
 
     });
-
 

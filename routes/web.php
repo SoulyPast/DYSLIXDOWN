@@ -33,6 +33,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/activitats','activitats@index');
     Route::get('/activitats/show/{id}', 'activitats@getShow');
     Route::get('/activitats1/show/{id}', 'activitats@getShow');
+    Route::get('/activitats2/show/{id}', 'activitats@getShow');
     Route::get('/activitats1/ajax/{id}', 'activitats@getShowajax');
     Route::post('/activitats/create','activitats@postCreate');
     Route::get('/activitats/create','activitats@getCreate');
@@ -58,6 +59,10 @@ Route::group(['middleware' => 'auth'], function() {
     Route::put('/activitat/show2ExercicisEdit/{id}', 'exercicis2@putexercici');
     Route::delete('/activitat/show2Exercicis/{id}', 'exercicis2@deletexercici');
     Route::post('/resultat/ajax', 'activitats@postajax');
+    Route::post('/valoracio/ajax', 'valoracions@postajax');
+    Route::get('/valoracio','valoracions@index');
+    Route::get('/resultat/{id}','valoracions@show');
+
 });
 
 
