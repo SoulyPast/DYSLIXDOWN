@@ -32,8 +32,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/prueba','HomeController@prueba');
     Route::get('/activitats','activitats@index');
     Route::get('/activitats/show/{id}', 'activitats@getShow');
-    Route::get('/activitats1/show/{id}', 'activitats@getShow');
-    Route::get('/activitats2/show/{id}', 'activitats@getShow');
+   Route::get('/activitats1/show/{codi}', 'activitats@getShow');
+    Route::get('/activitats2/show/{codi}', 'activitats@getShow');
     Route::get('/activitats1/ajax/{id}', 'activitats@getShowajax');
     Route::post('/activitats/create','activitats@postCreate');
     Route::get('/activitats/create','activitats@getCreate');
@@ -62,6 +62,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/valoracio/ajax', 'valoracions@postajax');
     Route::get('/valoracio','valoracions@index');
     Route::get('/resultat/{id}','valoracions@show');
+    Route::get('/play','valoracions@play');
+    Route::get('/play/{code}','valoracions@code');
 
 });
 

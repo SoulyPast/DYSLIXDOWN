@@ -142,6 +142,9 @@ input[type=radio]:checked~label.star svg path {
   fill: #fff;
 }
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 .font {
         background-image:  url("https://images.unsplash.com/photo-1564089915105-db97895bdd78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");

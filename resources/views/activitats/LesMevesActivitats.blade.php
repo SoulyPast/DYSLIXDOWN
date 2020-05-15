@@ -15,7 +15,7 @@
   </thead>
   <tbody>
   @foreach( $activitas as $key => $activitat )
-    <tr style="text-align: center;">
+    <tr id="{{$activitat->id}}" style="text-align: center;" class="table-light">
       <td> {{$activitat->nom_activitat}} </td>
       <td>
       @if($activitat->public)
@@ -41,11 +41,8 @@
       @endif
 
 
-      <form action="{{ action('activitats@deleteActivitats', $activitat->id) }}" method="POST" style="display:inline">
-                    {{ method_field('DELETE') }}
-                    {{ csrf_field() }}
-                    <button type="submit" class="btn btn-danger mt-1" style="display:inline"> <span class="glyphicon glyphicon-trash"></span>  Eliminar Activitat </button>
-      </form>
+        <button type="submit" class="btn btn-danger del mt-1" style="display:inline" onclick="ActivitatDELETE({{$activitat->id}})"> <span class="glyphicon glyphicon-trash"></span>  Eliminar Activitat </button>
+
       </td>
     </tr>
         @endforeach
@@ -54,3 +51,7 @@
 </div>
 </div>
 @stop
+@section('scripts')
+<script src="{{ asset('Script/delete.js') }}" defer></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+@endsection

@@ -10,6 +10,11 @@
             @if(Auth::check())
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
+                        <a class="nav-link" href="{{url('/play')}}">
+                            <span class="glyphicon glyphicon-list-alt"></span> Play
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{url('/activitats')}}">
                             <span class="glyphicon glyphicon-list-alt"></span> Activitats
                         </a>

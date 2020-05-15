@@ -10,7 +10,7 @@ use App\Resultat;
 use DateTime;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-
+use DB;
 class activitats extends Controller
 {
     public function index()
@@ -21,9 +21,9 @@ class activitats extends Controller
     }
 
     // mostra una activitat per id
-    public function getShow($id){
-        $activitas=Activitat::findOrFail($id);
-        $exercici=Exercici::all()->where('activitat_id','=',$id);
+    public function getShow($codi){
+        $activitas = Activitat::wherecodi($codi)->first();
+        $exercici=Exercici::all()->where('activitat_id','=',$activitas->id);
         if($activitas->tipus_id==1){
         return view('activitats1.show',array('activitas' => $activitas),array('exercici' => $exercici));
         }
@@ -83,7 +83,8 @@ class activitats extends Controller
         $data->USER()->authorizeRoles('professor');
         $activitats=Activitat::findOrFail($id);
             $activitats->delete();
-            return redirect('/LesMevesActivitats');
+           // return redirect('/LesMevesActivitats');
+        return true;
     }
 
     public function getshowactivitat($id, Request $data){

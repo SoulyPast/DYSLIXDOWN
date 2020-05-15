@@ -26,9 +26,9 @@
                         <p class="card-text">Escola: {{Auth::user()->escola}}</p>
                         <p class="card-text"style="display:none"><a>{{$activitat->nom_activitat}} {{Auth::user()->escola}}</a></p>
                         @if($activitat->tipus_id==1)
-                            <a href="{{ url('/activitats1/show/'.$activitat->id) }}" class="btn btn-primary">Comença</a>
+                            <a href="{{ url('/activitats1/show/'.$activitat->codi) }}" class="btn btn-primary">Comença</a>
                         @else
-                            <a href="{{ url('/activitats2/show/'.$activitat->id) }}" class="btn btn-primary">Comença</a>
+                            <a href="{{ url('/activitats2/show/'.$activitat->codi) }}" class="btn btn-primary">Comença</a>
                         @endif
 
                     </div>
