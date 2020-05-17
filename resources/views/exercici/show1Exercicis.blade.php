@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+<link rel="stylesheet" href="{{ asset('/Styles/Activitats.css') }}">
 <div class="container">
 <h2> Activitat: {{$activitats->nom_activitat}} </h2>
 <h3> Tipus :  {{ $activitats->tipus->nom_tipus }}</h3>
@@ -58,11 +59,11 @@
       <th scope="col">Accions</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="bg-light">
   @php($count=0)
   @foreach( $Exercicis as $key => $Exercici )
   @php($count++)
-    <tr class=" text-center">
+    <tr class="text-center" id="{{$Exercici->id}}">
       <th scope="row"> Exercici {{$count}}</th>
       <td>{{$Exercici->resposta}}</td>
       <td>
@@ -77,7 +78,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body start">
       <form action="{{ url('/activitat/show1ExercicisEdit/'.$Exercici->id) }}" method="post" enctype="multipart/form-data">
             {{method_field('PUT')}}
             {{ csrf_field() }}
@@ -112,7 +113,7 @@
   </div>
 </div>
 
-      <form action="{{ action('exercicis@deletexercici', $Exercici->id) }}" method="POST" style="display:inline">
+<form action="{{ action('exercicis@deletexercici', $Exercici->id) }}" method="POST" style="display:inline">
                     {{ method_field('DELETE') }}
                     {{ csrf_field() }}
                     <input type="text" class="form-control" name="id_activitat"  value="{{$activitats->id}}" style="display:none">
@@ -136,7 +137,7 @@
                 <div class="col-sm mt-2">
                 Actividad Activa
                 </div>
-                <form action="{{ action('exercicis@putReturn', $activitats->id) }}" method="POST" style="display:inline">
+                <form action="{{ action('exercicis@putNoAcabat', $activitats->id) }}" method="POST" style="display:inline">
                 {{ method_field('PUT') }}
                     {{ csrf_field() }}
                     <div class="col-sm mt-2 mb-1 px-md-5">
@@ -147,7 +148,7 @@
                  <div class="col-sm mt-2">
                 Activitat En procés
                 </div>
-                <form action="{{ action('exercicis@putRent', $activitats->id) }}" method="POST" style="display:inline">
+                <form action="{{ action('exercicis@putAcabat', $activitats->id) }}" method="POST" style="display:inline">
                     {{ method_field('PUT') }}
                     {{ csrf_field() }}
                     <div class="col-sm mt-1 mb-1 px-md-5">
@@ -161,6 +162,6 @@
 </div>
 @stop
 @section('scripts')
-<script src="{{ asset('Script/Show1Exercicis.js') }}" defer></script>
+<script src="{{ asset('Script/delete.js') }}" defer></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 @endsection

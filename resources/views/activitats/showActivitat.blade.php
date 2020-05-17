@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"> {{$activitat->nom_activitat}} </div>
+                <div class="card-header"> <h1> {{$activitat->nom_activitat}} </h1> </div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -12,23 +12,25 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    Descripcio : {{ $activitat->descripcio_activiatat }}<br></br>
+                    <strong>Descripció : </strong>{{ $activitat->descripcio_activiatat }}<br></br>
                     @if($activitat->public)
-                    <a> Public : Si </a>
+                    <a> <strong>Privacitat de l'activitat:</strong> Pública (La poden veure els alumnes i els professors)</a>
                     @else
-                    <a> Public : No</a>
+                    <a> <strong>Privacitat de l'activitat:</strong> Privada (Només es pot accedir amb codi)</a>
                     @endif
                     <br></br>
                     @if($activitat->acabat)
-                    <a> Acabat : Si </a>
+                    <a> <strong>Estat :</strong> Acabada </a>
                     @else
-                    <a> Acabat : No</a>
+                    <a> <strong>Estat :</strong> En procés</a>
                     @endif
                     <br></br>
-                    Tipus :   {{ $activitat->tipus->nom_tipus }} <br></br>
-                    Nivell :  {{ $activitat->nivell->nom_nivell }} <br></br>
+                    <strong>Tipus :</strong>   {{ $activitat->tipus->nom_tipus }} <br></br>
+                    <strong>Descripció de Tipus :</strong>  {{ $activitat->tipus->descripcio_tipus }} <br></br>
+                    <strong>Nivell :</strong>  {{ $activitat->nivell->nom_nivell }} <br></br>
+                    <strong>Descripció de Nivel :</strong>  {{ $activitat->nivell->descripcio_nivell }} <br></br>
                     @if(!$activitat->public)
-                    <a> Code : {{$activitat->codi}} </a>
+                    <a> <strong>Code :</strong> {{$activitat->codi}} </a>
                     @endif
                     </div>
                 </div>
@@ -36,5 +38,4 @@
         </div>
     </div>
 </div>
-
 @endsection

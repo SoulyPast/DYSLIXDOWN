@@ -11,7 +11,7 @@
       <th scope="col">Accions</th>
     </tr>
   </thead>
-  <tbody style="text-align: center;">
+  <tbody style="text-align: center;" class="bg-light">
   @foreach( $valoracio as $key => $val )
   <tr>
             <td>{{$val->activitat->nom_activitat}}</td>
@@ -25,7 +25,7 @@
             <td>
             <a type="button" class="btn btn-info mt-1" href="{{ url('/resultat/'.$val->activitat_id) }}">Mostrar</a>
             </td>
-</tr>
+  </tr>
         @endforeach
   </tbody>
 </table>

@@ -2,22 +2,27 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
+use App\rang;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
-class perfilcontroller extends Controller
+class PerfilController extends Controller
 {
+    // Mostrar El perfil
     public function index(Request $request)
     {
-        return view('perfil');
+        $Rang=Rang::all()->where('user_id','=',Auth::user()->id)->first();
+        return view('perfil',array('Rang' => $Rang));
     }
 
+    // Mostrar el formulario de esitar el perfil.
     public function editperfil(Request $request){
+
         return view('editperfil');
     }
 
+    //Modificacio del perfi.
     public function update(Request $request){
-        //Modificacio del usuari actual
         if(Hash::check($request->password, Auth::user()->password)){
             $user=User::findOrFail(Auth::user()->id);
             $user->name =  $request['name'];
@@ -34,11 +39,13 @@ class perfilcontroller extends Controller
 
     }
 
+    // Mostrar el formulario de editar la contrasenya de usuari .
     public function showcontrasenya(Request $request)
     {
         return view('/editacontrasenya');
     }
 
+    // Modificacio de la constrasenya.
      public function editacontrasenya(Request $request)
     {
         if(Hash::check($request->passwordanti, Auth::user()->password)){

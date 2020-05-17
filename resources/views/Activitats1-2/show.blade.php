@@ -1,26 +1,28 @@
 @extends('layouts.master')
 @section('content')
-<h1>{{$activitas->nom_activitat}} </h1>
-<h2 class = "{{$activitas->tipus->nom_tipus}}"> {{$activitas->tipus->nom_tipus}}</h2>
-<h2 class = "auth" style="display:none"> {{Auth::user()->id}}</h2>
-<div id="1" style="display:none; text-center">
-<img src="http://localhost:8000/Imatges/resultat/emoji1.png" class="img-fluid mx-auto d-block" alt="Responsive image">
+<link rel="stylesheet" href="{{ asset('/Styles/Activitats.css') }}">
+<h1>{{$activitats->nom_activitat}} </h1>
+<h2 id="Type" class = "{{$activitats->tipus->nom_tipus}}"> {{$activitats->tipus->nom_tipus}}</h2>
+<h2 class = "auth none" >{{Auth::user()->id}}</h2>
+<h2 class = "active none" >{{$activitats->id}}</h2>
+<div id="1" class="none center">
+<img src="{{ asset('/Imatges/resultat/emoji1.png') }}" class="img-fluid mx-auto d-block" alt="Responsive image">
 <h2 id="11" class="text-center">Bon intent però es pot millorar</h2>
 </div>
-<div id="2" style="display:none; text-center mx-auto d-block">
-<img src="http://localhost:8000/Imatges/resultat/smile5.png" class="img-fluid mx-auto d-block" alt="Responsive image">
+<div id="2" class="none center">
+<img src="{{ asset('/Imatges/resultat/smile5.png') }}" class="img-fluid mx-auto d-block" alt="Responsive image">
 <h2 id="22" class="text-center">Bé</h2>
 </div>
-<div id="3" style="display:none;  text-center ">
-<img src="http://localhost:8000/Imatges/resultat/emoji10.png" class="img-fluid mx-auto d-block" alt="Responsive image">
+<div id="3" class="none center">
+<img src="{{ asset('/Imatges/resultat/emoji10.png') }}" class="img-fluid mx-auto d-block" alt="Responsive image">
 <h2 id="33" class="text-center" >Molt-bé</h2>
 </div>
-<a type="button" id="return" class="btn btn-info  btn-lg mt-1" style="display:none"  href="{{ url('/activitats') }}">Tornar</a>
+<a type="button" id="return" class="btn btn-info  btn-lg mt-1 none"   href="{{ url('/activitats') }}">Tornar</a>
 <div>
 
 </div>
-<input id="id_activitat" type="number" value="{{$activitas->id}}" style="display:none">
-<div class="Començar wrap text-center justify-content" style="display:block;display: flex;align-items: center;justify-content: center;background-image: url('https://i.pinimg.com/originals/4a/96/e6/4a96e602750b8ef669a77565becf3939.gif');height:500px;">
+<input id="id_activitat" class="none" type="number" value="{{$activitats->id}}" >
+<div class="Començar wrap text-center justify-content backimg">
   <button class="button" id="Començar">Començar</button>
 </div>
 
@@ -29,7 +31,7 @@
 @foreach($exercici as $key => $exerci)
 @php($count++)
   <li class="nav-item ml-2 mt-3">
-    <button class="nav-link EExercici{{$count}}" id="pills-{{$exerci->id}}-tab" data-toggle="pill" href="#pills-{{$exerci->id}}" role="tab" aria-controls="pills-{{$exerci->id}}" aria-selected="true" style="display:none" disabled>Exercici{{$count}}</button>
+    <button class="nav-link none EExercici{{$count}}" id="pills-{{$exerci->id}}-tab" data-toggle="pill" href="#pills-{{$exerci->id}}" role="tab" aria-controls="pills-{{$exerci->id}}" aria-selected="true"  disabled>Exercici{{$count}}</button>
   </li>
 @endforeach
 </ul>
@@ -40,7 +42,6 @@
 
 <div class="modal fade" id="myModal" role="dialog"  data-backdrop="static" >
     <div class="modal-dialog">
-
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
@@ -91,17 +92,13 @@
         <button type="button" id="valorar" class="btn btn-primary"  data-dismiss="modal" aria-label="Close" disabled>Enviar</button>
         </div>
       </div>
-
     </div>
-
   </div>
-
-
 </div>
 </div>
 @endsection
-
 @section('scripts')
-<script src="{{ asset('Script/Forma2.js') }}" defer></script>
+<script src="{{ asset('Script/Exercicis.js') }}" defer></script>
+<script src="{{ asset('Script/Valoracions.js') }}" defer></script>
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
 @endsection

@@ -1,3 +1,8 @@
+/**
+ * agafar els nom de les escoles servir una api externa aixo per evitar problemes en el cas que actualitzen el nom
+ * a més generar amb dom els noms d'escoles en html.
+ */
+
 const url = 'https://analisi.transparenciacatalunya.cat/resource/e2ef-eiqj.json';
 const http = new XMLHttpRequest();
 var sel = document.getElementById('escola');
@@ -25,6 +30,7 @@ if(this.readyState == 4 && this.status == 200){
 http.send();
 
 
+// la funció que comprova si l'usuari ha acceptat la política de privacitat.
 
 $("#cbox1").on( 'change', function() {
     if( $(this).is(':checked') ) {

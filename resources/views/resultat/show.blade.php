@@ -11,7 +11,7 @@
       <th scope="col">Respuestes Correctes</th>
     </tr>
   </thead>
-  <tbody style="text-align: center;">
+  <tbody   class="bg-light" style="text-align: center;">
   @foreach( $resultats as $key => $res )
   <tr>
             <td>{{$res->user->name}}</td>

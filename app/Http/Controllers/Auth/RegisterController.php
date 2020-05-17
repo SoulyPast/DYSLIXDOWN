@@ -86,10 +86,13 @@ class RegisterController extends Controller
         $user->save();
         if( $data['user']=='Professor'){
             $user->roles()->attach($role_prof);
+
         }
         else {
             $user->roles()->attach($role_alumne);
+            $user->rang();
         };
+
         return $user;
 
         /*return User::create([

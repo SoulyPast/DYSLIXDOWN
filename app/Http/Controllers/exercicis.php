@@ -7,12 +7,18 @@ use Illuminate\Http\Request;
 
 class exercicis extends Controller
 {
+    // Mostrar els exercicis per id de activitat
     public function getShow($id){
         $activitats=Activitat::findOrFail($id);
         $Exercicis = Exercici::all()->where('activitat_id','=',$id);
-        return view('exercici.show1Exercicis',array('activitats' => $activitats),array('Exercicis' => $Exercicis));
+        if( $activitats->tipus_id == 1){
+        return view('exercici.show1Exercicis',array('activitats' => $activitats),array('Exercicis' => $Exercicis));}
+        else{
+        return view('exercici.show2Exercicis',array('activitats' => $activitats),array('Exercicis' => $Exercicis));
+        }
     }
 
+    // Crear un exercici (Tipus: Formant paraules)
     public function postcreate(Request $data ,$id){
         Exercici::create([
             'activitat_id' => $id,
@@ -22,6 +28,7 @@ class exercicis extends Controller
          return redirect()->to('/activitat/show1Exercicis/'.$id);
     }
 
+    // Borrar un exercici.
     public function deletexercici($id ,Request $data)
     {
             $exercici=Exercici::findOrFail($id );
@@ -35,6 +42,7 @@ class exercicis extends Controller
 
     }
 
+    // Edita un exercici (Tipus: Formant paraules)
     public function putexercici($id ,Request $data)
     {
             $exercici=Exercici::findOrFail($id );
@@ -44,13 +52,15 @@ class exercicis extends Controller
             return redirect()->to('/activitat/show1Exercicis/'.$data['id_activitat']);
     }
 
-    public function putRent($id){
+    // canviar l'estat de activitat activa
+    public function putAcabat($id){
         $activitat=Activitat::findOrFail($id);
         $activitat->update(['acabat' => true]);
         return redirect()->to('/activitats/showActivitat/'.$id);
     }
 
-    public function putReturn($id)
+    // canviar l'estat de activitat en procés
+    public function putNoAcabat($id)
     {
         $activitat=Activitat::findOrFail($id);
         $activitat->update(['acabat' => false]);

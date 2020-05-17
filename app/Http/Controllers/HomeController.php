@@ -21,21 +21,16 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    // Mostrar el Home.
     public function index(Request $request)
     {
-        //$request->USER()->authorizeRoles('professor');
         return view('home');
     }
 
-    public function prueba(Request $request)
-    {
-        $request->USER()->authorizeRoles('professor');
-        return view('prueba');
-    }
-
+    // Comprovar si l'usuari si aquesta loguejat per anar a activitats sinó a login.
     public function getHome()
     {
-
         if (Auth::check()){
             return redirect('/activitats');
         }else{

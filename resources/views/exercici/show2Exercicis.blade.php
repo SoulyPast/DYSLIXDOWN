@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+<link rel="stylesheet" href="{{ asset('/Styles/Activitats.css') }}">
 <div class="container">
 <h2> Activitat: {{$activitats->nom_activitat}} </h2>
 <h3> Tipus :  {{ $activitats->tipus->nom_tipus }}</h3>
@@ -125,14 +126,14 @@
       <th scope="col">Accions</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="bg-light">
   @php($count=0)
   @foreach( $Exercicis as $key => $Exercici )
   @php($count++)
-    <tr class="text-center">
+    <tr class="text-center" id="{{$Exercici->id}}">
       <th scope="row"> Exercici {{$count}}</th>
       <td>{{$Exercici->resposta}}</td>
-      <td>{{$Exercici->opcio1}} {{$Exercici->opcio2}} {{$Exercici->opcio3}} {{$Exercici->opcio4}} {{$Exercici->opcio5}} {{$Exercici->opcio6}} {{$Exercici->opcio7}}</td>
+      <td>{{$Exercici->opcio1}}  {{$Exercici->opcio2}}  {{$Exercici->opcio3}}  {{$Exercici->opcio4}}  {{$Exercici->opcio5}}  {{$Exercici->opcio6}}  {{$Exercici->opcio7}}</td>
       <td>
       <a type="button" class="btn btn-warning"  data-toggle="modal" data-target="#ModalCenter{{$Exercici->id}}">Editar</a>
 <!-- Modal -->
@@ -145,7 +146,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body start">
       <form action="{{ url('/activitat/show2ExercicisEdit/'.$Exercici->id) }}" method="post" enctype="multipart/form-data">
             {{method_field('PUT')}}
             {{ csrf_field() }}
@@ -248,10 +249,10 @@
 
 
 
-      <form action="{{ action('exercicis2@deletexercici', $Exercici->id) }}" method="POST" style="display:inline">
+<form action="{{ action('exercicis@deletexercici', $Exercici->id) }}" method="POST" style="display:inline">
                     {{ method_field('DELETE') }}
                     {{ csrf_field() }}
-                    <input type="text" class="form-control" name="id_activitat" id="id_activitat" value="{{$activitats->id}}" style="display:none">
+                    <input type="text" class="form-control" name="id_activitat"  value="{{$activitats->id}}" style="display:none">
                     <button type="submit" class="btn btn-danger" style="display:inline"> <span class="glyphicon glyphicon-trash"></span>  Eliminar </button>
                 </form>
       </td>
@@ -271,7 +272,7 @@
                 <div class="col-sm mt-3">
                 Actividad Activa
                 </div>
-                <form action="{{ action('exercicis@putReturn', $activitats->id) }}" method="POST" style="display:inline">
+                <form action="{{ action('exercicis@putNoAcabat', $activitats->id) }}" method="POST" style="display:inline">
                 {{ method_field('PUT') }}
                     {{ csrf_field() }}
                     <div class="col-sm mt-2 mb-2 px-md-5">
@@ -282,7 +283,7 @@
                  <div class="col-sm mt-3">
                 Activitat En procés
                 </div>
-                <form action="{{ action('exercicis@putRent', $activitats->id) }}" method="POST" style="display:inline">
+                <form action="{{ action('exercicis@putAcabat', $activitats->id) }}" method="POST" style="display:inline">
                     {{ method_field('PUT') }}
                     {{ csrf_field() }}
                     <div class="col-sm mt-2 mb-2 px-md-5">

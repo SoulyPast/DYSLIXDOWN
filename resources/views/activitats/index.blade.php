@@ -1,25 +1,20 @@
 @extends('layouts.master')
 @section('content')
+<link rel="stylesheet" href="{{ asset('/Styles/Activitats.css') }}">
+
 <div class="form-group has-search">
     <span class="fa fa-search form-control-feedback"></span>
-    <input type="text" class="form-control" placeholder="Cercar" id="myInput" onkeyup="myFunction()">
+    <input type="text" class="form-control" placeholder="Cercar" id="myInput" onkeyup="SearchBar()">
   </div>
 
-<div class="row" class="text-center" style="algin-text:center">
-
-
-         <div class="ml-3">
-         <ul id="myUL" class="lista pater " style="padding-right: 0px;
-            padding-left: 0px;
-            padding-bottom: 0px;
-            padding-top: 0px;
-            margin: 0px;
-            display: flex;flex-wrap: wrap;text-align:center;justify-content: center;">
-         @foreach( $activitas as $key => $activitat )
-         <li style="list-style:none;"class=" mr-3">
-                    <div class="card" style="margin:5px 0 10px 0;">
-                    <img src="http://127.0.0.1:8000/Imatges/Logo/Logo.png" class="card-img-top" style="width:200px;height:80px;margin-left:20%">
-                    <div class="card-body" style="width:350px; height:250px">
+<div class="row" class="center">
+    <div class="ml-3">
+         <ul id="myUL" class="lista pater">
+         @foreach( $activitats as $key => $activitat )
+         <li class="linone mr-2 ml-2">
+                    <div class="card" >
+                    <img src="{{ asset('Imatges/Logo/Logo.png') }} " class="card-img-top" >
+                    <div class="card-body">
                         <h5 class="card-title">{{$activitat->nom_activitat}}</h5>
                         <p class="card-text">Tipus: {{$activitat->tipus->nom_tipus}}</p>
                         <p class="card-text">Nivell: {{$activitat->nivell->nom_nivell}}</p>
@@ -36,12 +31,10 @@
         </li>
         @endforeach
         </ul>
-        </div>
+    </div>
 
 </div>
-
 @endsection
 @section('scripts')
-<script src="{{ asset('Script/activitat.js') }}" defer></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="{{ asset('Script/SearchBar.js') }}" defer></script>
 @endsection

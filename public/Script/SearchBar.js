@@ -1,4 +1,6 @@
-function myFunction() {
+
+// JavaScript per cercar activitats.
+function SearchBar() {
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
@@ -14,16 +16,3 @@ function myFunction() {
         }
     }
 }
-
-function getMessage() {
-   $.ajax({
-      type:'get',
-      url:'/activitats/show/15',
-      data:'_token = <?php echo csrf_token() ?>',
-      success:function(data) {
-        //console.log(data);
-        //https://laracasts.com/discuss/channels/laravel/how-to-make-a-blade-view-returning-json?page=1
-      }
-   });
-}
-getMessage();

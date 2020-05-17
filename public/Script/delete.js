@@ -1,5 +1,5 @@
+// borra una activitat
 function ActivitatDELETE($id){
-
 
     $.ajax({
         url: "/activitats/delete/"+$id,

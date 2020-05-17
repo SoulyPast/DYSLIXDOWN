@@ -22,9 +22,13 @@
                     Tipus d'usuari: Alumne <br></br>
                     @endif
                     Escola: {{ Auth::user()->escola }}
+                    @if(Auth::user()->hasRole('alumne')) <br></br>
+                    Nivell: {{ Auth::user()->Nivell }} <br></br>
+                    Experiència: {{ Auth::user()->Exp }}xp
+                    @endif
                     <div class="mt-5 text-center">
-                    <a href="http://localhost:8000/editPerfil" class="btn btn-primary">Modifica el teu perfil</a>
-                    <a href="http://localhost:8000/editacontrasenya" class="btn btn-secondary">Modifica la teva contrasenya</a>
+                    <a href="http://localhost:8000/editPerfil" class="btn btn-primary mb-1">Modifica el teu perfil</a>
+                    <a href="http://localhost:8000/editacontrasenya" class="btn btn-secondary mb-1">Modifica la teva contrasenya</a>
                     </div>
                 </div>
             </div>

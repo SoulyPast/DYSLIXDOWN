@@ -1,61 +1,50 @@
 <?php
-
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use App\User;
 use App\Activitat;
 use App\Tipus;
 use App\Nivell;
 use App\Exercici;
 use App\Resultat;
+use App\Rang;
 use DateTime;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
 use DB;
-class activitats extends Controller
+class ActivitatController extends Controller
 {
+    // Mostra totes les activitats que estan públiques i acabades.
     public function index()
     {
-        //mostrar activitats
-        $activitas=Activitat::all()->where('public','=',true)->where('acabat','=',true);
-        return view('activitats.index', array( 'activitas' => $activitas));
+        $activitats=Activitat::all()->where('public','=',true)->where('acabat','=',true);
+        return view('activitats.index', array( 'activitats' => $activitats));
     }
 
-    // mostra una activitat per id
+    // Mostrar activitat per codi también retornar els exercicis relacionat amb aquesta activitat.
     public function getShow($codi){
-        $activitas = Activitat::wherecodi($codi)->first();
-        $exercici=Exercici::all()->where('activitat_id','=',$activitas->id);
-        if($activitas->tipus_id==1){
-        return view('activitats1.show',array('activitas' => $activitas),array('exercici' => $exercici));
-        }
-        else{
-        return view('activitats2.show',array('activitas' => $activitas),array('exercici' => $exercici));
-        }
+        $activitats = Activitat::wherecodi($codi)->first();
+        $exercici=Exercici::all()->where('activitat_id','=',$activitats->id);
+        return view('Activitats1-2.show',array('activitats' => $activitats),array('exercici' => $exercici));
+
     }
 
-    public function getShowajax($id){
-        $exercici=Exercici::all()->where('activitat_id','=',$id);
-        return  response()->json(array('exercici' => $exercici), 200);
-    }
-
+    // Mostrar el formulari amb els tipus d'activitats i nivells diponibles.
     public function getCreate(Request $request){
         $request->USER()->authorizeRoles('professor');
         $Tipus=Tipus::all();
         $Nivells=Nivell::all();
         return view('activitats.create',array( 'Tipus' => $Tipus),array( 'Nivells' => $Nivells));
     }
-    //Crea Activitat
+
+    // Crea una Activitat Nova .
     public function postCreate(Request $data)
     {
         $data->USER()->authorizeRoles('professor');
         $Tipus=Tipus::where('nom_tipus','=',$data['tipus'])->pluck('id');
         $Nivells=Nivell::where('nom_nivell','=',$data['nivell'])->pluck('id');
         $ESTAT = true;
-        if($data['estat']=='Public'){
-            $ESTAT=true;
-        }
-        else{
-            $ESTAT=false;
-        }
+        if($data['estat']=='Public'){$ESTAT=true;}
+        else{$ESTAT=false;}
         $now = new DateTime();
         Activitat::create([
             'nom_activitat' => $data['nom'],
@@ -66,40 +55,32 @@ class activitats extends Controller
             'codi' => $now->getTimestamp(),
             'public' => $ESTAT
             ]);
-
             return redirect('/LesMevesActivitats');
     }
 
-
+    // Mostra totes les activitats que ha creat un usuari tipo professional.
     public function getshowactivitats(Request $data){
         $data->USER()->authorizeRoles('professor');
-        $activitas=Activitat::all()->where('user_id','=',Auth::user()->id);
-        return view('activitats.LesMevesActivitats', array( 'activitas' => $activitas));
+        $activitats=Activitat::all()->where('user_id','=',Auth::user()->id);
+        return view('activitats.LesMevesActivitats', array( 'activitats' => $activitats));
     }
 
 
-    public function deleteActivitats($id, Request $data)
-    {
-        $data->USER()->authorizeRoles('professor');
-        $activitats=Activitat::findOrFail($id);
-            $activitats->delete();
-           // return redirect('/LesMevesActivitats');
-        return true;
-    }
-
+    // Accedir a una activitat concreta que ha creat un usuari tipo professional.
     public function getshowactivitat($id, Request $data){
         $data->USER()->authorizeRoles('professor');
         $activitat=Activitat::findOrFail($id);
         return view('activitats.showActivitat',array('activitat' => $activitat));
     }
 
-
+    // Mostrar el formulario de Editar a una activitat.
     public function getEdit($id, Request $data){
         $data->USER()->authorizeRoles('professor');
         $activitat=Activitat::findOrFail($id);
         return view('activitats.edita',array('activitat' => $activitat));
     }
 
+    // Editar a una activitat concreta que ha creat un usuari tipo professional.
     public function putEdit($id ,Request $request){
         $request->USER()->authorizeRoles('professor');
         $ESTAT = true;
@@ -109,7 +90,7 @@ class activitats extends Controller
         else{
             $ESTAT = false;
         }
-        $activitat=Activitat::findOrFail($id);
+            $activitat=Activitat::findOrFail($id);
             $activitat->nom_activitat = $request->input('nom');
             $activitat->descripcio_activiatat = $request->input('descripcio');
             $activitat->tipus_id = $request->input('tipus');
@@ -122,6 +103,27 @@ class activitats extends Controller
 
     }
 
+
+    /***************************
+     *  AJAX
+     ***************************/
+
+     // Ajax Get: mostrar exercicis de una activitat buscan per id de activitat.
+    public function getShowajax($id){
+        $exercici=Exercici::all()->where('activitat_id','=',$id);
+        return  response()->json(array('exercici' => $exercici), 200);
+    }
+
+    // Ajax Delete: Borrar una activitat.
+    public function deleteActivitats($id, Request $data)
+    {
+        $data->USER()->authorizeRoles('professor');
+        $activitats=Activitat::findOrFail($id);
+        $activitats->delete();
+        return true;
+    }
+
+    // Ajax Post: Guardar la puntacio del usuari normal despres de fer l'activitat.
     public function postajax( Request $data ){
        Resultat::create([
             'puntuacio' => $data['puntuacio'],
@@ -129,9 +131,18 @@ class activitats extends Controller
             'activitat_id' => $data['activitat_id'],
             'eroors' => $data['eroors']
             ]);
-
-        return response()->json(['success'=>$data['eroors']]);
-
+        /*$Exp=0;
+        if($data['puntuacio']==3){
+            $EXP=300;
+        }
+        else if($data['puntuacio']==2){
+            $EXP=200;
+        }
+        else{
+            $EXP=100;
+        }
+        $Rang=Rang::all()->where('user_id','=',$data['activitat_id']);
+*/
+        return response()->json(['success'=>'be']);
     }
-
 }

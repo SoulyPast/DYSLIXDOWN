@@ -7,12 +7,8 @@ use Illuminate\Http\Request;
 
 class exercicis2 extends Controller
 {
-    public function getShow($id){
-        $activitats=Activitat::findOrFail($id);
-        $Exercicis = Exercici::all()->where('activitat_id','=',$id);
-        return view('exercici.show2Exercicis',array('activitats' => $activitats),array('Exercicis' => $Exercicis));
-    }
 
+    // Crear un exercici (Tipus: Discriminació visual d'una paraula)
     public function postcreate(Request $data ,$id){
         $activitats=Activitat::findOrFail($id);
         if($activitats->nivell_id==1){
@@ -54,6 +50,7 @@ class exercicis2 extends Controller
          return redirect()->to('/activitat/show2Exercicis/'.$id);
         }
 
+         // Edita un exercici (Tipus: Discriminació visual d'una paraula)
         public function putexercici($id ,Request $data)
         {
         $activitats=Activitat::findOrFail($data->input('id_activitat'));
@@ -92,19 +89,5 @@ class exercicis2 extends Controller
         }
         return redirect()->to('/activitat/show2Exercicis/'.$data['id_activitat']);
         }
-
-        public function deletexercici($id ,Request $data)
-    {
-            $exercici=Exercici::findOrFail($id );
-            $exercici->delete();
-            $exeactivitat = Exercici::all()->where('activitat_id','=',$data['id_activitat'])->count();
-            if($exeactivitat<5){
-                $activitat=Activitat::findOrFail($data['id_activitat']);
-                $activitat->update(['acabat' => false]);
-            }
-            return redirect()->to('/activitat/show2Exercicis/'.$data['id_activitat']);
-
-    }
-
 
 }
