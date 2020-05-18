@@ -17,9 +17,9 @@
                     <div class="card-body">
                     <a>
                         <h5 class="card-title">{{$activitat->nom_activitat}}</h5>
-                        <p class="card-text">Tipus: {{$activitat->tipus->nom_tipus}}</p>
+                        <p class="card-text">{{$activitat->tipus->nom_tipus}}</p>
                         <p class="card-text">Nivell: {{$activitat->nivell->nom_nivell}}</p>
-                        <p class="card-text">Escola: {{Auth::user()->escola}}</p>
+                        <p class="card-text">Escola: {{$activitat->user->escola}}</p>
                     <a>
                         @if($activitat->tipus_id==1)
                             <a href="{{ url('/activitats1/show/'.$activitat->codi) }}" class="btn btn-primary mt-1">Comença</a>

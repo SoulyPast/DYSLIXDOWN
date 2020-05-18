@@ -29,7 +29,7 @@ class CreateActivitatsTable extends Migration
         Schema::table('activitats', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
             $table->foreign('nivell_id')->references('id')->on('nivells')->onDelete('cascade');;
-            $table->foreign('tipus_id')->references('id')->on('tipuses')->onDelete('cascade');;
+            $table->foreign('tipus_id')->references('id')->on('tipus')->onDelete('cascade');;
         });
     }
 

@@ -24,7 +24,7 @@
                     Escola: {{ Auth::user()->escola }}
                     @if(Auth::user()->hasRole('alumne')) <br></br>
                     Nivell: {{ Auth::user()->Nivell }} <br></br>
-                    Experiència: {{ Auth::user()->Exp }}xp
+                    Experiència: {{ Auth::user()->Experencia }}xp
                     @endif
                     <div class="mt-5 text-center">
                     <a href="http://localhost:8000/editPerfil" class="btn btn-primary mb-1">Modifica el teu perfil</a>

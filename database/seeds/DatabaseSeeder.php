@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use App\User;
 use App\Role;
 use App\Nivell;
-use App\Tipus;
+use App\Tipu;
 // importa la comnda para crer movies php artisan migrate:refresh --seed.
 class DatabaseSeeder extends Seeder
 {
@@ -120,9 +120,9 @@ class DatabaseSeeder extends Seeder
                                 ));
 
                                 private function seedTipus(){
-                                    DB::table('Tipuses')->delete();
+                                    DB::table('tipus')->delete();
                                     foreach( $this->arrayTipus as $tipus ) {
-                                        $t = new Tipus;
+                                        $t = new Tipu;
                                         $t->nom_tipus = $tipus['nom_tipus'];
                                         $t->descripcio_tipus = $tipus['descripcio_tipus'];
                                         $t->save();

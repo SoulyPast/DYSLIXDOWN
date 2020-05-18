@@ -48,10 +48,9 @@ html, body {
 .m-b-md {
     margin-bottom: 30px;
 }
-.flex-center {
 
-}
 @import url(https://fonts.googleapis.com/css?family=Fira + Sans:400, 500italic);
+
 @keyframes eyes {
 0%, 8.8888888889%, 100% {
 top: -50px;
@@ -93,24 +92,30 @@ left: -140px;
 left: 280px;
 }
 }
+
 html {
 height: 100%;
 background-color: rgba(34, 32, 36, 1);
 background: radial-gradient(circle at center, rgba(71, 65, 76, 1) 0%, rgba(34, 32, 36, 1) 100%);
 background-repeat: no-repeat;
 }
+
 body {
 font: normal 100% "Fira Sans", sans-serif;
 }
+
 h2 {
 font-size: 4vw;
 }
+
 h2 span {
 font-size: 60%;
 }
+
 a {
 color: #aaa;
 }
+
 .globe {
 margin: 1em 0 0 0;
 position: relative;
@@ -126,6 +131,13 @@ overflow: hidden;
 box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
+.shadowFrame {
+    width: 130px;
+    margin-left: 115px;
+    margin-top: 15px;
+  }
+
+
 @media screen and (max-width: 800px) {
     .globe {
         width: 300px;
@@ -138,6 +150,12 @@ box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3);
         justify-content: center;
         align-items: center;
     }
+    .shadowFrame{
+        margin-left:19px;
+        padding-left:0;
+    }
+
+
 }
 .globe:before, .globe:after {
 position: absolute;
@@ -146,6 +164,7 @@ box-sizing: border-box;
 border-radius: 50%;
 z-index: 10;
 }
+
 .globe:before {
 height: 94%;
 width: 94%;
@@ -156,6 +175,7 @@ border-right-color: rgba(255, 255, 255, 0.3);
 border-right-width: 10px;
 border-right-style: solid;
 }
+
 .globe:after {
 top: 50px;
 right: 65px;
@@ -180,10 +200,6 @@ left: -100px;
 to {
 left: calc( 100% + 100px );
 }
-}
-
-body{
-
 }
 
 .p{
@@ -220,9 +236,9 @@ animation-duration:20s;
 top:90%;
 }
 
-.killer {
+.content {
 background-image:  url("https://images.unsplash.com/photo-1564089915105-db97895bdd78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
-position: relative;
+
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
@@ -241,10 +257,7 @@ background-size: cover;
        transform: translate(0, 20px);
     }
   }
-  .shadowFrame {
-    width: 130px;
-    margin-top: 15px;
-  }
+
   .shadow {
     text-align: center;
     animation: shrink 3s ease-out infinite;
@@ -269,16 +282,26 @@ background-size: cover;
     }
   }
 
-  body {
-    margin: 0px;
-    padding: 0px;
+  html, body {
     height: 100%;
+    margin: 0;
   }
 
 
-.killer{
-    min-height: calc(100% - 81px);
-    position: relative;
-}
+  html {
+    height: 100%;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Avoid the IE 10-11 `min-height` bug. */
+  }
+  .content {
+    flex: 1 0 auto; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+  }
+  .footer {
+    flex-shrink: 0; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+
+  }
 
 

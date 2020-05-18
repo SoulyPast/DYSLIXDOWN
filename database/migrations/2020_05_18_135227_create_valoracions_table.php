@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateValoraciosTable extends Migration
+class CreateValoracionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateValoraciosTable extends Migration
      */
     public function up()
     {
-        Schema::create('valoracios', function (Blueprint $table) {
+        Schema::create('valoracions', function (Blueprint $table) {
             $table->increments('id');
             $table->Integer('stars');
             $table->unsignedBigInteger('user_id')->unisgned();
@@ -21,7 +21,7 @@ class CreateValoraciosTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('valoracios', function (Blueprint $table) {
+        Schema::table('valoracions', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
             $table->foreign('activitat_id')->references('id')->on('activitats')->onDelete('cascade');;
 
@@ -35,6 +35,6 @@ class CreateValoraciosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('valoracios');
+        Schema::dropIfExists('valoracions');
     }
 }

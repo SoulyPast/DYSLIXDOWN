@@ -27,6 +27,6 @@ class Activitat extends Model
 
     public function tipus()
     {
-        return $this->belongsTo('App\Tipus');
+        return $this->belongsTo('App\Tipu');
     }
 }

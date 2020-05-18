@@ -19,11 +19,11 @@
     </head>
     <body>
     @include('partials.navbar')
-    <div id="page-container">
-    <div class="killer pt-4 pb-4">
-    <div class="container mt-5">
+    <div id="page-container" class="content">
+    <div class="killer pb-5">
+    <div class="container conte mt-5">
     <div class="row mt-5" >
-    <div class="col mt-5 animacion center-block">
+    <div class="col mt-5 animacion center-block ">
     <div class="globe center-block">
 
     <div class="containe text-center mt-5">
@@ -63,7 +63,7 @@
 	c1.564,0,2.833-1.269,2.833-2.833c0-1.355-0.954-2.485-2.226-2.764c4.419-1.285,9.269-2.074,14.437-2.074
 	c7.636,0,15.336,1.684,22.887,5.004c26.766,11.771,29.011,39.047,29.027,39.251V121.405z"/>
     </svg>
-  <p class="shadowFrame text-center" style="align-text:center;margin-left: 115px;"><svg version="1.1" class="shadow mr-5 text-center" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="61px" y="20px"
+  <p class="shadowFrame text-center" style="align-text:center;"><svg version="1.1" class="shadow mr-5 text-center" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="61px" y="20px"
 	 width="122.436px" height="39.744px" viewBox="0 0 122.436 39.744" enable-background=""
 	 xml:space="preserve">
     <ellipse fill="#E8E8FD" cx="61.128" cy="19.872" rx="49.25" ry="8.916"/>
@@ -72,7 +72,7 @@
         </div>
 
     </div>
-    <div class="col text-center enter align-items-center mt-5">
+    <div class="col text-center enter align-items-center pt-3">
         <div class="mt-5">
         <h4>Millora la teva escriptura i millorar la teva lectura</h4>
         <p class="mt-5">
@@ -86,11 +86,11 @@
     </div>
     </div>
     </div>
-
+</div>
 
 
 <!-- Footer -->
-<footer class="page-footer font-small bg-light text-dark mdb-color lighten-3 ">
+<footer class="footer page-footer font-small bg-light text-dark mdb-color lighten-3 ">
 
   <!-- Footer Links -->
   <div class="container text-center text-md-left">
@@ -149,7 +149,7 @@
           </li>
           <li>
             <p>
-              <i class="fas fa-envelope mr-3" style='color:#98BEF5'></i> DUSLIXDOWN@gmail.com</p>
+              <i class="fas fa-envelope mr-3" style='color:#98BEF5'></i> Dyslixdown@gmail.com</p>
           </li>
           <li>
             <p>
@@ -196,7 +196,7 @@
   <!-- Copyright -->
 
 </footer>
-</div>
+
 <!-- Footer -->
     </body>
 </html>

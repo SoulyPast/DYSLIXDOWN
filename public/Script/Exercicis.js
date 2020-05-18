@@ -186,7 +186,7 @@ function getMessage() {
                         url:"/nivell/ajax",
                         data:{"puntuacio":puntuacio},
                         success:function(data){
-
+                            console.log(data);
                         }
                      });
             }

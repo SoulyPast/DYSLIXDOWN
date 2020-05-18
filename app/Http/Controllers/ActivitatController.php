@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\User;
 use App\Activitat;
-use App\Tipus;
+use App\Tipu;
 use App\Nivell;
 use App\Exercici;
 use App\Resultat;
@@ -31,7 +31,7 @@ class ActivitatController extends Controller
     // Mostrar el formulari amb els tipus d'activitats i nivells diponibles.
     public function getCreate(Request $request){
         $request->USER()->authorizeRoles('professor');
-        $Tipus=Tipus::all();
+        $Tipus=Tipu::all();
         $Nivells=Nivell::all();
         return view('activitats.create',array( 'Tipus' => $Tipus),array( 'Nivells' => $Nivells));
     }
@@ -40,7 +40,7 @@ class ActivitatController extends Controller
     public function postCreate(Request $data)
     {
         $data->USER()->authorizeRoles('professor');
-        $Tipus=Tipus::where('nom_tipus','=',$data['tipus'])->pluck('id');
+        $Tipus=Tipu::where('nom_tipus','=',$data['tipus'])->pluck('id');
         $Nivells=Nivell::where('nom_nivell','=',$data['nivell'])->pluck('id');
         $ESTAT = true;
         if($data['estat']=='Public'){$ESTAT=true;}
@@ -148,11 +148,10 @@ class ActivitatController extends Controller
              $EXP=10;
          }
          $user=User::findOrFail(Auth::user()->id);
-         $Experencia = $user->Exp + $EXP;
+         $Experencia = $user->Experencia + $EXP;
          $Nivell =  substr($Experencia, 0, -2);
-
-         $user->update(['Exp' => $Experencia,'Nivell' => $Nivell]);
-         return response()->json(['success'=>'be']);
+         $user->update(['Experencia' => $Experencia,'Nivell' => $Nivell]);
+         return response()->json(['success'=> $Experencia]);
      }
 
 

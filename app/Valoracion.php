@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Valoracio extends Model
+class Valoracion extends Model
 {
     protected $fillable = [
         'stars', 'user_id', 'activitat_id'
@@ -20,4 +20,3 @@ class Valoracio extends Model
         return $this->belongsTo('App\Activitat');
     }
 }
-

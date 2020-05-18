@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('content')
 <link rel="stylesheet" href="{{ asset('/Styles/Activitats.css') }}">
-<h1 style="font-size:3vw;">{{$activitats->nom_activitat}} </h1>
-<h2 id="Type" class = "{{$activitats->tipus->nom_tipus}}" style="font-size:2vw;"> Tipus: {{$activitats->tipus->nom_tipus}}</h2>
+<h1 style="font-size:3vw;">{{$activitats->nom_activitat}}</h1>
+<h2 id="Type" class = "{{$activitats->tipus->nom_tipus}}" style="font-size:2vw;"> {{$activitats->tipus->nom_tipus}}</h2>
 <h2 class = "auth none" >{{Auth::user()->id}}</h2>
 <h2 class = "active none" >{{$activitats->id}}</h2>
 <div id="1" class="none center">
@@ -98,7 +98,7 @@
 </div>
 @endsection
 @section('scripts')
-<script src="{{ asset('Script/Exercicis.js') }}" defer></script>
-<script src="{{ asset('Script/Valoracions.js') }}" defer></script>
+<script src="{{ asset('/Script/Exercicis.js') }}" defer></script>
+<script src="{{ asset('/Script/Valoracions.js') }}" defer></script>
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
 @endsection

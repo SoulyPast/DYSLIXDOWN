@@ -4,7 +4,6 @@
 <div class="container">
 <h2 class="text"> {{$activitats->nom_activitat}} </h2>
 <h2 class="text"> Tipus :  {{ $activitats->tipus->nom_tipus }}</h2>
-
 <button type="button" class="btn btn-primary mt-4"  id="afegir" data-toggle="modal" data-target="#exampleModalCenter">Afegir Exercici</button>
 
 <!-- Modal -->
@@ -162,6 +161,6 @@
 </div>
 @stop
 @section('scripts')
-<script src="{{ asset('Script/delete.js') }}" defer></script>
+<script src="{{ asset('Script/Extra.js') }}" defer></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 @endsection
