@@ -2,8 +2,8 @@
 @section('content')
 <link rel="stylesheet" href="{{ asset('/Styles/Activitats.css') }}">
 <div class="container">
-<h2> Activitat: {{$activitats->nom_activitat}} </h2>
-<h3> Tipus :  {{ $activitats->tipus->nom_tipus }}</h3>
+<h2 class="text"> {{$activitats->nom_activitat}} </h2>
+<h2 class="text"> Tipus :  {{ $activitats->tipus->nom_tipus }}</h2>
 
 <button type="button" class="btn btn-primary mt-4"  id="afegir" data-toggle="modal" data-target="#exampleModalCenter">Afegir Exercici</button>
 
@@ -51,7 +51,7 @@
   </div>
 </div>
 <br>
-<table class="table mt-5">
+<table class="table mt-5 table-responsive-sm">
   <thead  class="table-secondary text-center" >
     <tr>
       <th scope="col">Exercicis</th>

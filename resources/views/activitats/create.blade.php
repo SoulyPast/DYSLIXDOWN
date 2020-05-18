@@ -19,7 +19,7 @@
 
             <div class="form-group">
   					<label for="nom">Nom :</label>
-  					<input type="text" name="nom" id="nom" class="form-control" placeholder="Nom de l'activitat" required>
+  					<input type="text" name="nom" id="nom" class="form-control" placeholder="Nom de l'activitat" maxlength="20" required>
 					</div>
 
 					<div class="form-group">

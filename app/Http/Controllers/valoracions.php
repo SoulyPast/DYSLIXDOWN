@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Valoracio;
 use App\Resultat;
 use App\Activitat;
-
 use DB;
 use App\Exercici;
 class valoracions extends Controller
@@ -23,7 +22,10 @@ class valoracions extends Controller
      }
 
      public function index( Request $data ){
-            $valoracio=Valoracio::Select('activitat_id',DB::raw('AVG(stars) as quantity'))->groupBy('activitat_id')->get();
+
+            $valoracio=Valoracio::Select('activitat_id',DB::raw('AVG(stars) as quantity'))
+            ->leftJoin('activitats','valoracios.activitat_id','=','activitats.id')
+            ->where('activitats.user_id','=',Auth::user()->id)->groupBy('valoracios.activitat_id')->get();
             return view('resultat.index', array( 'valoracio' => $valoracio));
      }
 

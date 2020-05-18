@@ -18,7 +18,7 @@
 
             <div class="form-group">
   					<label for="nom">Nom :</label>
-  					<input type="text" name="nom" id="nom" class="form-control" value="{{$activitat->nom_activitat}}">
+  					<input type="text" name="nom" id="nom" class="form-control" maxlength="20" value="{{$activitat->nom_activitat}}">
 					</div>
 
 					<div class="form-group">
@@ -47,7 +47,7 @@
 
 
 					<div class="form-group text-center">
-						<button type="submit" class="btn btn-primary bt">
+						<button type="submit" class="btn btn-primary ">
                         Actualiza l'activitat
 						</button>
 					</div>

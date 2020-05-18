@@ -1,14 +1,14 @@
 <nav class="navbar navbar-expand-lg  navbar-light bg-light static-top">
   <div class="container">
-    <a class="navbar-brand" href="/">
-        <img src="http://127.0.0.1:8000/Imatges/Logo/Logo.png" alt="Logo"  class="img-responsive">
+    <a class="navbar-brand" href="{{url('/')}}">
+        <img src="{{ asset('Imatges/Logo/Logo.png') }}" alt="Logo"  class="img-responsive">
         </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
+    <div class="collapse navbar-collapse" class="d-flex flex-row-reverse" id="navbarResponsive">
             @if(Auth::check())
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto d-flex justify-content-end">
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('/play')}}">
                             <span class="glyphicon glyphicon-list-alt"></span> Play
@@ -59,9 +59,9 @@
 
                 @endif
                 @if(!Auth::check())
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-auto  d-flex justify-content-end">
                 </ul>
-                <ul class="navbar-nav navbar-right">
+                <ul class="navbar-nav navbar-right d-flex justify-content-end">
                     <li class="nav-item">
                         <a href="{{  route('login') }}" class="btn btn-default"> Login </a>
                     </li>

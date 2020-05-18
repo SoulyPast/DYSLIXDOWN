@@ -54,6 +54,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::put('/activitat/edita/{id}', 'ActivitatController@putEdit');
     Route::get('/activitat/edita/{id}', 'ActivitatController@getEdit');
     Route::post('/resultat/ajax', 'ActivitatController@postajax');
+    Route::put('/nivell/ajax', 'ActivitatController@PutNivellAjax');
 
     /**
      * Routes dels exercicis.

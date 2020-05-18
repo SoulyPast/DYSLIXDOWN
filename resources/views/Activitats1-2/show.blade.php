@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('content')
 <link rel="stylesheet" href="{{ asset('/Styles/Activitats.css') }}">
-<h1>{{$activitats->nom_activitat}} </h1>
-<h2 id="Type" class = "{{$activitats->tipus->nom_tipus}}"> {{$activitats->tipus->nom_tipus}}</h2>
+<h1 style="font-size:3vw;">{{$activitats->nom_activitat}} </h1>
+<h2 id="Type" class = "{{$activitats->tipus->nom_tipus}}" style="font-size:2vw;"> Tipus: {{$activitats->tipus->nom_tipus}}</h2>
 <h2 class = "auth none" >{{Auth::user()->id}}</h2>
 <h2 class = "active none" >{{$activitats->id}}</h2>
 <div id="1" class="none center">

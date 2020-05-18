@@ -2,7 +2,6 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
-use App\rang;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,8 +10,7 @@ class PerfilController extends Controller
     // Mostrar El perfil
     public function index(Request $request)
     {
-        $Rang=Rang::all()->where('user_id','=',Auth::user()->id)->first();
-        return view('perfil',array('Rang' => $Rang));
+        return view('perfil');
     }
 
     // Mostrar el formulario de esitar el perfil.

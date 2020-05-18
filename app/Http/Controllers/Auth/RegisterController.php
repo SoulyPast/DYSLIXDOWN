@@ -90,7 +90,7 @@ class RegisterController extends Controller
         }
         else {
             $user->roles()->attach($role_alumne);
-            $user->rang();
+
         };
 
         return $user;

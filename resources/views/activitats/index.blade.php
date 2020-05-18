@@ -11,21 +11,21 @@
     <div class="ml-3">
          <ul id="myUL" class="lista pater">
          @foreach( $activitats as $key => $activitat )
-         <li class="linone mr-2 ml-2">
-                    <div class="card" >
+         <li class="linone mr-3 ml-2">
+                    <div class="card" style="width: 18rem; ">
                     <img src="{{ asset('Imatges/Logo/Logo.png') }} " class="card-img-top" >
                     <div class="card-body">
+                    <a>
                         <h5 class="card-title">{{$activitat->nom_activitat}}</h5>
                         <p class="card-text">Tipus: {{$activitat->tipus->nom_tipus}}</p>
                         <p class="card-text">Nivell: {{$activitat->nivell->nom_nivell}}</p>
                         <p class="card-text">Escola: {{Auth::user()->escola}}</p>
-                        <p class="card-text"style="display:none"><a>{{$activitat->nom_activitat}} {{Auth::user()->escola}}</a></p>
+                    <a>
                         @if($activitat->tipus_id==1)
-                            <a href="{{ url('/activitats1/show/'.$activitat->codi) }}" class="btn btn-primary">Comença</a>
+                            <a href="{{ url('/activitats1/show/'.$activitat->codi) }}" class="btn btn-primary mt-1">Comença</a>
                         @else
-                            <a href="{{ url('/activitats2/show/'.$activitat->codi) }}" class="btn btn-primary">Comença</a>
+                            <a href="{{ url('/activitats2/show/'.$activitat->codi) }}" class="btn btn-primary mt-1" >Comença</a>
                         @endif
-
                     </div>
                     </div>
         </li>

@@ -180,6 +180,15 @@ function getMessage() {
                         $("#myModal").modal();
                      });
 
+                     // Puja de nivell
+                     $.ajax({
+                        type: "PUT",
+                        url:"/nivell/ajax",
+                        data:{"puntuacio":puntuacio},
+                        success:function(data){
+
+                        }
+                     });
             }
         });
 

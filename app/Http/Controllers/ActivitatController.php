@@ -131,18 +131,30 @@ class ActivitatController extends Controller
             'activitat_id' => $data['activitat_id'],
             'eroors' => $data['eroors']
             ]);
-        /*$Exp=0;
-        if($data['puntuacio']==3){
-            $EXP=300;
-        }
-        else if($data['puntuacio']==2){
-            $EXP=200;
-        }
-        else{
-            $EXP=100;
-        }
-        $Rang=Rang::all()->where('user_id','=',$data['activitat_id']);
-*/
         return response()->json(['success'=>'be']);
     }
+
+    public function PutNivellAjax( Request $data ){
+
+        $data->USER()->authorizeRoles('alumne');
+         $Exp=0;
+         if($data['puntuacio']==3){
+             $EXP=30;
+         }
+         else if($data['puntuacio']==2){
+             $EXP=20;
+         }
+         else{
+             $EXP=10;
+         }
+         $user=User::findOrFail(Auth::user()->id);
+         $Experencia = $user->Exp + $EXP;
+         $Nivell =  substr($Experencia, 0, -2);
+
+         $user->update(['Exp' => $Experencia,'Nivell' => $Nivell]);
+         return response()->json(['success'=>'be']);
+     }
+
+
+
 }
