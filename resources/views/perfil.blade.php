@@ -27,8 +27,8 @@
                     Experiència: {{ Auth::user()->Experencia }}xp
                     @endif
                     <div class="mt-5 text-center">
-                    <a href="http://localhost:8000/editPerfil" class="btn btn-primary mb-1">Modifica el teu perfil</a>
-                    <a href="http://localhost:8000/editacontrasenya" class="btn btn-secondary mb-1">Modifica la teva contrasenya</a>
+                    <a href="{{  url('editPerfil') }}" class="btn btn-primary mb-1">Modifica el teu perfil</a>
+                    <a href="{{  url('editacontrasenya') }}" class="btn btn-secondary mb-1">Modifica la teva contrasenya</a>
                     </div>
                 </div>
             </div>
