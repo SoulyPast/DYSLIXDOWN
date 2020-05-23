@@ -4,7 +4,7 @@
 
 <div class="container">
 <h1 class=" mt-4">Llista de les teves activitats :</h1>
-<a type="button" class="btn btn-primary mt-4" href="{{ url('/activitats/create') }}">Afegir Activitat</a>
+<a type="button" class="btn btn-primary mt-4" href="{{ url('/activitats/create') }}"><i class="fa fa-plus"></i> Afegir Activitat</a>
 <div class="table-responsive-sm">
 <table class="table mt-4">
   <thead >
@@ -34,14 +34,14 @@
       @endif
       </td>
       <td>
-      <a type="button" class="btn btn-info mt-1" href="{{ url('/activitats/showActivitat/'.$activitat->id) }}">Mostrar</a>
-      <a type="button" class="btn btn-warning mt-1" href="{{ url('/activitat/edita/'.$activitat->id) }}">Editar</a>
+      <a type="button" class="btn btn-info mt-1" href="{{ url('/activitats/showActivitat/'.$activitat->id) }}"><i class="fa fa-info-circle"></i> Mostrar</a>
+      <a type="button" class="btn btn-warning mt-1" href="{{ url('/activitat/edita/'.$activitat->id) }}"><i class="fa fa-edit"></i> Editar</a>
       @if(($activitat->tipus_id)==1)
-      <a type="button" class="btn btn-success mt-1" href="{{ url('/activitat/show1Exercicis/'.$activitat->id) }}">Exercicis</a>
+      <a type="button" class="btn btn-success mt-1" href="{{ url('/activitat/show1Exercicis/'.$activitat->id) }}"><i class="fa fa-book"></i> Exercicis</a>
       @else
-      <a type="button" class="btn btn-success mt-1" href="{{ url('/activitat/show2Exercicis/'.$activitat->id) }}">Exercicis</a>
+      <a type="button" class="btn btn-success mt-1" href="{{ url('/activitat/show2Exercicis/'.$activitat->id) }}"><i class="fa fa-book"></i> Exercicis</a>
       @endif
-      <button type="submit" class="btn btn-danger del mt-1" style="display:inline" onclick="ActivitatDELETE({{$activitat->id}})"> <span class="glyphicon glyphicon-trash"></span>  Eliminar </button>
+      <button type="submit" class="btn btn-danger del mt-1" style="display:inline" onclick="ActivitatDELETE({{$activitat->id}})"> <span class="glyphicon glyphicon-trash"></span><i class="fa fa-trash"></i>  Eliminar </button>
       </td>
     </tr>
   @endforeach

@@ -29,7 +29,6 @@ if(this.readyState == 4 && this.status == 200){
     };
 http.send();
 
-
 // la funció que comprova si l'usuari ha acceptat la política de privacitat.
 
 $("#cbox1").on( 'change', function() {

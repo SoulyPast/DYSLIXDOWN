@@ -8,7 +8,7 @@
       <th scope="col">Nom Alumne:</th>
       <th scope="col">Puntuació</th>
       <th scope="col">Respuestes del alumne</th>
-      <th scope="col">Respuestes Correctes</th>
+      <th scope="col">Total d'errors</th>
     </tr>
   </thead>
   <tbody   class="bg-light" style="text-align: center;">
@@ -25,12 +25,23 @@
                 @endif
 
             </td>
-            <td>{{$res->eroors}}</td>
             <td>
-            @foreach( $respostes as $key => $resp )
-                {{$resp->resposta}},
-            @endforeach
+            <?php
+                    $resp = array();
+                    foreach ($respostes as $clave => $valor) {
+                        $resp[] = $valor->resposta;
+                    };
+                    $porciones = explode(",", $res->eroors);
+                    $resultadom = array_diff($porciones, $resp);
+                    $resultadob = array_diff($porciones,$resultadom);
+                    ?>
+                                Respuestas correctas:<a style="color:green">{{implode(",",$resultadob)}}</a><br>
+                                Respuestas incorrectas:<a style="color:red">{{implode(",",$resultadom)}}</a>
             </td>
+            <td>
+            {{count($resultadom)}}
+            </td>
+
 </tr>
         @endforeach
   </tbody>

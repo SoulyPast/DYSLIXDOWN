@@ -29,8 +29,16 @@
                     <strong>Descripció de Tipus :</strong>  {{ $activitat->tipus->descripcio_tipus }} <br></br>
                     <strong>Nivell :</strong>  {{ $activitat->nivell->nom_nivell }} <br></br>
                     <strong>Descripció de Nivel :</strong>  {{ $activitat->nivell->descripcio_nivell }} <br></br>
-                    @if(!$activitat->public)
+                    @if(!$activitat->public && $activitat->acabat==1)
                     <a> <strong>Code :</strong> {{$activitat->codi}} </a>
+                    @endif
+                    </div>
+                    <div class=" text-center">
+                    <a href="{{  url('LesMevesActivitats') }}" class="btn btn-primary mb-1">LesMevesActivitats</a>
+                    @if ($activitat->tipus_id ==1)
+                    <a href="{{  url('/activitat/show1Exercicis',$activitat->id) }}" class="btn btn-success mb-1">Exericicis</a>
+                    @else
+                    <a href="{{  url('/activitat/show2Exercicis',$activitat->id) }}" class="btn btn-success mb-1">Exericicis</a>
                     @endif
                     </div>
                 </div>

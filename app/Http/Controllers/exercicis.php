@@ -10,6 +10,7 @@ class exercicis extends Controller
     // Mostrar els exercicis per id de activitat
     public function getShow($id){
         $activitats=Activitat::findOrFail($id);
+
         $Exercicis = Exercici::all()->where('activitat_id','=',$id);
         if( $activitats->tipus_id == 1){
         return view('exercici.show1Exercicis',array('activitats' => $activitats),array('Exercicis' => $Exercicis));}

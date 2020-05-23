@@ -8,15 +8,20 @@ $.ajax({
         var keys = Object.keys(data.Activitat);
         var id = data.Activitat[keys[0]].codi;
         var tipus =  data.Activitat[keys[0]].tipus_id;
-        redirect(id , tipus);
+        var acabat = data.Activitat[keys[0]].acabat;
+        redirect(id , tipus, acabat);
     }
 });
 });
 
-function redirect(id , tipus)
+function redirect(id , tipus, acabat)
     {
+        if(acabat==1){
         var url = "/activitats"+tipus+"/show/"+id;
-        window.location.assign(url);
+        window.location.assign(url);}
+        else{
+        window.location.assign('/play');
+        }
     }
 
     $(document).on('input', '#input', function(){

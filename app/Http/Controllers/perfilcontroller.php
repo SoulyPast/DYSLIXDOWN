@@ -16,7 +16,7 @@ class PerfilController extends Controller
     // Mostrar el formulario de esitar el perfil.
     public function editperfil(Request $request){
 
-        return view('editperfil');
+        return view('editPerfil');
     }
 
     //Modificacio del perfi.

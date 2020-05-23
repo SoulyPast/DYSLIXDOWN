@@ -76,10 +76,10 @@
         <div class="mt-5">
         <h4>Millora la teva escriptura i millorar la teva lectura</h4>
         <p class="mt-5">
-        <a href="{{ url('/register') }}" class="btn btn-primary btn-lg btn-block">Comença</a>
+        <a href="{{ url('/register') }}" id ="register" class="btn btn-primary btn-lg btn-block">Comença</a>
         </p>
         <p>
-        <a href="{{ url('/login') }}" class="btn btn-secondary btn-lg btn-block">Ja tinc un compte</a>
+        <a href="{{ url('/login') }}" id ="login" class="btn btn-secondary btn-lg btn-block">Ja tinc un compte</a>
         </p>
         </div>
     </div>

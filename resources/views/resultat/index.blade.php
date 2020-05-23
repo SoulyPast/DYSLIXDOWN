@@ -23,7 +23,7 @@
             @endfor
             </td>
             <td>
-            <a type="button" class="btn btn-info mt-1" href="{{ url('/resultat/'.$val->activitat_id) }}">Mostrar</a>
+            <a type="button" class="btn btn-info mt-1" href="{{ url('/resultat/'.$val->activitat_id) }}"><i class="fa fa-info-circle"></i> Mostrar</a>
             </td>
   </tr>
         @endforeach

@@ -3,8 +3,8 @@
 <link rel="stylesheet" href="{{ asset('/Styles/Activitats.css') }}">
 
 <div class="form-group has-search">
-    <span class="fa fa-search form-control-feedback"></span>
-    <input type="text" class="form-control" placeholder="Cercar" id="myInput" onkeyup="SearchBar()">
+
+    <input type="text" class="form-control" placeholder="Cercar " id="myInput" onkeyup="SearchBar()">
   </div>
 
 <div class="row" class="center">
@@ -12,7 +12,7 @@
          <ul id="myUL" class="lista pater">
          @foreach( $activitats as $key => $activitat )
          <li class="linone mr-3 ml-2">
-                    <div class="card" style="width: 18rem; ">
+                    <div class="card" style="width: 18rem;">
                     <img src="{{ asset('Imatges/Logo/Logo.png') }} " class="card-img-top" >
                     <div class="card-body">
                     <a>
@@ -22,9 +22,9 @@
                         <p class="card-text">Escola: {{$activitat->user->escola}}</p>
                     <a>
                         @if($activitat->tipus_id==1)
-                            <a href="{{ url('/activitats1/show/'.$activitat->codi) }}" class="btn btn-primary mt-1">Comença</a>
+                            <a href="{{ url('/activitats1/show/'.$activitat->codi) }}" class="btn btn-primary mt-1"><i class="fa fa-child"></i> Comença</a>
                         @else
-                            <a href="{{ url('/activitats2/show/'.$activitat->codi) }}" class="btn btn-primary mt-1" >Comença</a>
+                            <a href="{{ url('/activitats2/show/'.$activitat->codi) }}" class="btn btn-primary mt-1" ><i class="fa fa-child"></i> Comença</a>
                         @endif
                     </div>
                     </div>
