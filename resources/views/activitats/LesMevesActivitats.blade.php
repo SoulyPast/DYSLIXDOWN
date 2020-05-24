@@ -49,7 +49,24 @@
 </table>
 </div>
 </div>
+
+<div class="modal"  id="confirm" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      </div>
+      <div class="modal-body">
+        <p>Segur que voleu suprimir-ho?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal" id="delete">Eliminar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 @stop
 @section('scripts')
 <script src="{{ asset('Script/delete.js') }}" defer></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
 @endsection

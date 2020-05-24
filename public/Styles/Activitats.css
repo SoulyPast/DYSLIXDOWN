@@ -48,7 +48,10 @@
 }
 
 .backimg{
-    display:block;display: flex;align-items: center;justify-content: center;background-image: url('https://i.pinimg.com/originals/4a/96/e6/4a96e602750b8ef669a77565becf3939.gif');height:500px;
+    display:block;display: flex;align-items: center;justify-content: center; background-color:#F8F9FA;;height:500px;
+    border: 2px solid #98BEF5;
+    padding: 10px;
+    border-radius: 25px;
 }
 
 .start {
@@ -84,3 +87,7 @@ a:hover, a:focus {
     background-size: 100% 2px;
 }
 
+.round{
+    background-color:#F8F9FA;
+    border-radius: 20px;
+}

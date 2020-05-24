@@ -1,21 +1,23 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
+<div class="container" style="">
+    <div class="row justify-content-center" >
         <div class="col-md-8">
-            <div class="card ">
-                <div class="card-header bg-light text-dark" >{{ __('Registrar') }}</div>
+            <div class="card " >
 
-                <div class="card-body">
+                <div class="card-header text-center" style=" font-size: 30px;text-transform: uppercase;">
+                {{ __('Formulari de Registre') }}  <i class="fa fa-address-card" style="color:DarkTurquoise;font-size:40px;"></i></div>
+                <div class="card-body" >
+
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nom d\'usuari') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right"><i class="fa fa-user-o" aria-hidden="true"></i> {{ __('Nom d\'usuari') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" maxlength="10" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -26,7 +28,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correu Electrònic') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right"><i class="fa fa-envelope-o" aria-hidden="true"></i> {{ __('Correu Electrònic') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -40,7 +42,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contrasenya') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right"><i class="fa fa-key" aria-hidden="true"></i> {{ __('Contrasenya') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -83,11 +85,11 @@
                         <div class="form-group row mb-0">
 
                         <div class=" offset-md-4">
-                        <label><input type="checkbox" id="cbox1" value="termes_politica"> He llegit i accepto <a href="http://127.0.0.1:8000/privacitat"> la política de privacitat </a> i <a href="http://127.0.0.1:8000/termes">  els termes</a>.</label><br>
+                        <label><input type="checkbox" id="cbox1" value="termes_politica"> He llegit i accepto <a href="http://127.0.0.1:8000/privacitat" target="_blank"> la política de privacitat </a> i <a href="http://127.0.0.1:8000/termes" target="_blank">  els termes</a>.</label><br>
                         </div>
                         </div>
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-5 offset-md-5 mt-2">
                                 <button type="submit" id="submit" class="btn btn-primary" disabled>
                                     {{ __('Register') }}
                                 </button>

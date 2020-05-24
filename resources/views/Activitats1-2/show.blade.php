@@ -35,7 +35,7 @@
   </li>
 @endforeach
 </ul>
-<div class="tab-content " id="pills-tabContent" style="background-image: url('https://i.pinimg.com/originals/4a/96/e6/4a96e602750b8ef669a77565becf3939.gif');text-align:center;">
+<div class="tab-content round" id="pills-tabContent" style="background-image: url('');text-align:center;background-repeat: no-repeat;  border: 2px solid #98BEF5;">
 </div>
 
 

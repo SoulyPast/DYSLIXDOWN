@@ -93,11 +93,15 @@ function getMessage() {
           }
           // genera el botó de reset.
           var reset = document.createElement("button");
-          reset.setAttribute("class", "btn btn-warning btn-lg mt-2 mb-2 mr-5 resetExercici"+exercicis[keys[i]].id);
+          reset.setAttribute("class", "btn btn-warning btn-lg mt-2 mb-2 mr-5 fa fa-arrow-righ resetExercici"+exercicis[keys[i]].id);
           reset.setAttribute("type", "reset");
           reset.setAttribute("value", "Reset");
-          var text1 = document.createTextNode('Reiniciar');
+          var text1 = document.createTextNode('Reiniciar ');
+          var reseti = document.createElement("i");
+          reseti.setAttribute("class","fa fa-retweet");
           reset.appendChild(text1);
+          reset.appendChild(reseti);
+
           // mostra per pantalla el valor selecionat.
           var txt = document.createElement("div");
           txt.setAttribute("class", "text-dark text-uppercase bg-light resultat text-center");
@@ -110,8 +114,11 @@ function getMessage() {
           seguent.setAttribute("style", "");
           seguent.setAttribute("disabled", "true");
           seguent.setAttribute("value", "seguent");
-          var text11 = document.createTextNode('Següent');
+          var seguenti = document.createElement("i");
+          seguenti.setAttribute("class","fa fa-arrow-right");
+          var text11 = document.createTextNode('Següent ');
           seguent.appendChild(text11);
+          seguent.appendChild(seguenti);
           tag.appendChild(div);
           tag.appendChild(txt);
           tag.appendChild(reset);
