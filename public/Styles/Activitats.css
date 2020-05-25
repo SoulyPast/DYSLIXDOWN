@@ -48,8 +48,8 @@
 }
 
 .backimg{
-    display:block;display: flex;align-items: center;justify-content: center; background-color:#F8F9FA;;height:500px;
-    border: 2px solid #98BEF5;
+    display:block;align-items: center;justify-content: center; background-color:white;height:500px;
+    border: 2px solid rgb(237, 241, 239);
     padding: 10px;
     border-radius: 25px;
 }
@@ -87,7 +87,55 @@ a:hover, a:focus {
     background-size: 100% 2px;
 }
 
-.round{
-    background-color:#F8F9FA;
-    border-radius: 20px;
+
+.round {
+	background-color: AliceBlue;
+
 }
+
+.exe{
+    color: black;
+    font-size: 19px;
+    height:150px;width:160px; display: block;
+    margin-top: 3rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+}
+
+.exe:hover:enabled {background-color:#008CBA;
+    ;}
+
+
+.textstyle{
+    font-size: 40px;
+    background-color: grey;
+}
+
+@media only screen and (max-width: 600px) {
+
+        .exe{
+            color: black;
+            font-size: 15px;
+            height: 90px;
+            width: 130px;
+            margin-top: 1rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .rest{
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+        }
+        .next{
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+        }
+
+  }

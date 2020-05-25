@@ -84,8 +84,7 @@ function getMessage() {
           // gènere els opcions de cada exercici.
           for (let x = 0; x < newarry.length; x++) {
             var div1 = document.createElement("button");
-            div1.setAttribute("class", "rounded-circle text-uppercase mt-5 mb-5 ml-5 mr-5 text-center rounded-sm border border-primary  btn Exercici"+exercicis[keys[i]].id);
-            div1.setAttribute("style", "height:150px;width:150px; display: block;");
+            div1.setAttribute("class", "exe rounded-circle text-uppercase  text-center rounded-sm border border-primary  btn Exercici"+exercicis[keys[i]].id);
             div1.setAttribute("type", "button");
             div.appendChild(div1);
             var text = document.createTextNode(newarry[x]);
@@ -93,7 +92,7 @@ function getMessage() {
           }
           // genera el botó de reset.
           var reset = document.createElement("button");
-          reset.setAttribute("class", "btn btn-warning btn-lg mt-2 mb-2 mr-5 fa fa-arrow-righ resetExercici"+exercicis[keys[i]].id);
+          reset.setAttribute("class", "btn rest btn-warning btn-lg mt-2 mb-2 mr-5 fa fa-arrow-righ resetExercici"+exercicis[keys[i]].id);
           reset.setAttribute("type", "reset");
           reset.setAttribute("value", "Reset");
           var text1 = document.createTextNode('Reiniciar ');
@@ -104,12 +103,12 @@ function getMessage() {
 
           // mostra per pantalla el valor selecionat.
           var txt = document.createElement("div");
-          txt.setAttribute("class", "text-dark text-uppercase bg-light resultat text-center");
+          txt.setAttribute("class", "textstyle text-dark text-uppercase resultat text-center");
           txt.setAttribute("id", "Exercici"+exercicis[keys[i]].id);
           txt.setAttribute("readonly", "true");
           // genera el botó de seguent.
           var seguent = document.createElement("button");
-          seguent.setAttribute("class", "btn btn-success btn-lg mt-2 mb-2 ml-5 justify-content-end seguent seguentExercici"+exercicis[keys[i]].id);
+          seguent.setAttribute("class", "btn next btn-success btn-lg mt-2 mb-2 ml-5 justify-content-end seguent seguentExercici"+exercicis[keys[i]].id);
           seguent.setAttribute("type", "submit");
           seguent.setAttribute("style", "");
           seguent.setAttribute("disabled", "true");

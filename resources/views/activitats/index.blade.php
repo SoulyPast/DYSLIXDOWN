@@ -12,9 +12,9 @@
          <ul id="myUL" class="lista pater">
          @foreach( $activitats as $key => $activitat )
          <li class="linone mr-3 ml-2">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 18rem;height:21rem">
                     <img src="{{ asset('Imatges/Logo/Logo.png') }} " class="card-img-top" >
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                     <a>
                         <h5 class="card-title">{{$activitat->nom_activitat}}</h5>
                         <p class="card-text">{{$activitat->tipus->nom_tipus}}</p>
@@ -22,9 +22,9 @@
                         <p class="card-text">Escola: {{$activitat->user->escola}}</p>
                     <a>
                         @if($activitat->tipus_id==1)
-                            <a href="{{ url('/activitats1/show/'.$activitat->codi) }}" class="btn btn-primary mt-1"><i class="fa fa-child"></i> Comença</a>
+                            <a href="{{ url('/activitats1/show/'.$activitat->codi) }}" class="btn btn-primary mt-1 mt-auto"><i class="fa fa-child"></i> Comença</a>
                         @else
-                            <a href="{{ url('/activitats2/show/'.$activitat->codi) }}" class="btn btn-primary mt-1" ><i class="fa fa-child"></i> Comença</a>
+                            <a href="{{ url('/activitats2/show/'.$activitat->codi) }}" class="btn btn-primary mt-1 mt-auto"><i class="fa fa-child"></i> Comença</a>
                         @endif
                     </div>
                     </div>

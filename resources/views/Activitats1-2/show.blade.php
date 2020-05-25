@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('content')
 <link rel="stylesheet" href="{{ asset('/Styles/Activitats.css') }}">
-<h1 style="font-size:3vw;">{{$activitats->nom_activitat}}</h1>
-<h2 id="Type" class = "{{$activitats->tipus->nom_tipus}}" style="font-size:2vw;"> {{$activitats->tipus->nom_tipus}}</h2>
+<h1 >{{$activitats->nom_activitat}}</h1>
+<h2 id="Type" class = "{{$activitats->tipus->nom_tipus}}" > {{$activitats->tipus->nom_tipus}}</h2>
 <h2 class = "auth none" >{{Auth::user()->id}}</h2>
 <h2 class = "active none" >{{$activitats->id}}</h2>
 <div id="1" class="none center">
@@ -22,8 +22,15 @@
 
 </div>
 <input id="id_activitat" class="none" type="number" value="{{$activitats->id}}" >
-<div class="Començar wrap text-center justify-content backimg">
+
+
+<div class="Començar backimg">
+<div class="mt-5">
+<img src="https://image.freepik.com/free-vector/superhero-kids_97632-409.jpg" class="img-fluid mx-auto d-block" alt="Responsive image" width="400px" height="200px">
+</div>
+<div class="text-center mt-5">
   <button class="button" id="Començar">Començar</button>
+</div>
 </div>
 
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -35,7 +42,7 @@
   </li>
 @endforeach
 </ul>
-<div class="tab-content round" id="pills-tabContent" style="background-image: url('');text-align:center;background-repeat: no-repeat;  border: 2px solid #98BEF5;">
+<div class="tab-content round" id="pills-tabContent" style="text-align:center;justify-content: center;">
 </div>
 
 

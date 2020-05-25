@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Edita Perfil') }}</div>
+                <div class="card-header text-center"><h1>{{ __('Edita Perfil') }}</h1></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{  url('editPerfil') }}">
@@ -77,6 +77,5 @@
 </div>
 @endsection
 @section('scripts')
-<script src="{{ asset('Script/app.js') }}" defer></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 @endsection
