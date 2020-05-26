@@ -136,7 +136,7 @@ function getMessage() {
             //aquesta funció el que fa és quan detecta clic sobre el button següent passa al'otro exercio.
             $("#pills-"+exercicis[keys[num]].id+"-tab").css("display", "none");
             $('#pills-'+exercicis[keys[num]].id).removeClass( "active show" );
-            arrayresultatsuser.push($("#Exercici"+exercicis[keys[num]].id).text());
+            arrayresultatsuser.push($("#Exercici"+exercicis[keys[num]].id).text());1590452486
             num++;
             if(num<keys.length){
                 Info(num);
@@ -171,20 +171,30 @@ function getMessage() {
                 var puntuacio = punts;
                 user_id = $('.auth').text();
                 activitat_id = exercicis[keys[0]].activitat_id;
-                var eroors = arrayuser.toString();
-                $.ajax({
+                arraycorect=[];
+                arrayerrors=[];
+                for (let index = 0; index < arrayuser.length; index++) {
+                    if(arrayuser[index]==arrayresultatsserver[index]){
+                        arraycorect.push(arrayuser[index]);
+                    }
+                    else{
+                        arrayerrors.push(arrayuser[index]);
+                    }
+                }
+
+               $.ajax({
                        type: "POST",
                        url:"/resultat/ajax",
-                       data:{"puntuacio":puntuacio,"user_id":user_id,"activitat_id":activitat_id,"eroors":eroors},
+                       data:{"puntuacio":puntuacio,"user_id":user_id,"activitat_id":activitat_id,"eroors":arrayerrors.toString(),"correctes":arraycorect.toString()},
                        success:function(data){
-
+                        jQuery.noConflict();
+                        $(document).ready(function(){
+                            $("#myModal").modal();
+                         });
                        }
                     });
                     // Abrir el modal de valoración quan acaba tots els exercicis.
-                    jQuery.noConflict();
-                    $(document).ready(function(){
-                        $("#myModal").modal();
-                     });
+
 
                      // Puja de nivell
                      $.ajax({

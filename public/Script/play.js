@@ -1,9 +1,9 @@
 // Accedir a les activitats privades pel codi indicant-lo en l'input
-$("#play").click(function(){
+$("#play").click(function()
+{
 $.ajax({
     type:'get',
     url:'/play/'+$("#input").val(),
-    data:'_token = <?php echo csrf_token() ?>',
     success:function(data) {
         var keys = Object.keys(data.Activitat);
         var id = data.Activitat[keys[0]].codi;

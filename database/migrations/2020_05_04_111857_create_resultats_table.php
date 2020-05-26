@@ -19,6 +19,7 @@ class CreateResultatsTable extends Migration
             $table->unsignedBigInteger('user_id')->unisgned();
             $table->unsignedInteger('activitat_id')->unisgned();
             $table->text('eroors');
+            $table->text('correctes');
             $table->timestamps();
         });
 

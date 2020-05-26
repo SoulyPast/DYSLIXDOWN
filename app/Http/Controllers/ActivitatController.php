@@ -129,7 +129,8 @@ class ActivitatController extends Controller
             'puntuacio' => $data['puntuacio'],
             'user_id' => $data['user_id'],
             'activitat_id' => $data['activitat_id'],
-            'eroors' => $data['eroors']
+            'eroors' => $data['eroors'],
+            'correctes' => $data['correctes']
             ]);
         return response()->json(['success'=>'be']);
     }

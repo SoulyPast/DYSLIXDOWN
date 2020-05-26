@@ -27,19 +27,16 @@
             </td>
             <td>
             <?php
-                    $resp = array();
-                    foreach ($respostes as $clave => $valor) {
-                        $resp[] = $valor->resposta;
-                    };
-                    $porciones = explode(",", $res->eroors);
-                    $resultadom = array_diff($porciones, $resp);
-                    $resultadob = array_diff($porciones,$resultadom);
+                    $resp = explode(",", $res->eroors);
+                    foreach($resp as $clave=>$valor){
+                        if(empty($valor)) unset($resp[$clave]);
+                        }
                     ?>
-                                Respuestas correctas:<a style="color:green">{{implode(",",$resultadob)}}</a><br>
-                                Respuestas incorrectas:<a style="color:red">{{implode(",",$resultadom)}}</a>
+                                Respuestas correctas:<a style="color:green">{{$res->correctes}}</a><br>
+                                Respuestas incorrectas:<a style="color:red">{{$res->eroors}}</a>
             </td>
             <td>
-            {{count($resultadom)}}
+            {{ count($resp) }}
             </td>
 
 </tr>

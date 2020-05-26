@@ -23,7 +23,7 @@ class exercicis extends Controller
     public function postcreate(Request $data ,$id){
         Exercici::create([
             'activitat_id' => $id,
-            'resposta' => $data['paraula'],
+            'resposta' => strtolower($data['paraula']),
             ]);
 
          return redirect()->to('/activitat/show1Exercicis/'.$id);
@@ -48,7 +48,7 @@ class exercicis extends Controller
     {
             $exercici=Exercici::findOrFail($id );
             $exercici->activitat_id = $data->input('id_activitat');
-            $exercici->resposta =  $data->input('paraula');
+            $exercici->resposta =  strtolower($data->input('paraula'));
             $exercici->save();
             return redirect()->to('/activitat/show1Exercicis/'.$data['id_activitat']);
     }
