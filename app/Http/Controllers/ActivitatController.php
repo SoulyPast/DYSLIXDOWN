@@ -43,7 +43,7 @@ class ActivitatController extends Controller
         $Tipus=Tipu::where('nom_tipus','=',$data['tipus'])->pluck('id');
         $Nivells=Nivell::where('nom_nivell','=',$data['nivell'])->pluck('id');
         $ESTAT = true;
-        if($data['estat']=='Public'){$ESTAT=true;}
+        if($data['estat']=='Publica'){$ESTAT=true;}
         else{$ESTAT=false;}
         $now = new DateTime();
         Activitat::create([
@@ -84,7 +84,7 @@ class ActivitatController extends Controller
     public function putEdit($id ,Request $request){
         $request->USER()->authorizeRoles('professor');
         $ESTAT = true;
-        if($request->input('estat')==='Public'){
+        if($request->input('estat')==='Publica'){
             $ESTAT = true;
         }
         else{

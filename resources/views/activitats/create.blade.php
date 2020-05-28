@@ -48,8 +48,8 @@
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Selecciona l'estat :</label>
                         <select class="form-control select"  name="estat" id="estat">
-                        <option> Public </option>
-                        <option> Privat </option>
+                        <option>Publica</option>
+                        <option>Privada</option>
                         </select>
                     </div>
 

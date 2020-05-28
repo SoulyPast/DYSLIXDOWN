@@ -22,19 +22,19 @@
       @if(($activitats->nivell_id)==1)
       <div class="form-group">
         <label for="opcio1"> Opció 1 Correcta </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio1" id="opcio1" aria-describedby="resposta" placeholder="Posa la resposta correcte" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio1"  aria-describedby="resposta" placeholder="Posa la resposta correcte" required>
       </div>
       <div class="form-group">
         <label for="opcio2"> Opció 2 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio2" id="opcio2" aria-describedby="opcio2" placeholder="Opció 2" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio2"  aria-describedby="opcio2" placeholder="Opció 2" required>
       </div>
       <div class="form-group">
         <label for="opcio3"> Opció 3 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio3" id="opcio3" aria-describedby="opcio3" placeholder="Opció 3" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio3"  aria-describedby="opcio3" placeholder="Opció 3" required>
       </div>
       <div class="form-group">
         <label for="opcio4"> Opció 4 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio4" id="opcio4" aria-describedby="opcio4" placeholder="Opció 4" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio4"  aria-describedby="opcio4" placeholder="Opció 4" required>
       </div>
       <div class="form-group">
       <small id="textHelp" maxlength="10" class="form-text text-muted">Recorda que el nivell d'activitat és fàcil com a màxim tendra 4 opcions.</small>
@@ -43,27 +43,27 @@
       @elseif(($activitats->nivell_id)==2)
       <div class="form-group">
         <label for="opcio1"> Opció 1 Correcta </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio1" id="opcio1" aria-describedby="resposta" placeholder="Posa la resposta correcte" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio1"  aria-describedby="resposta" placeholder="Posa la resposta correcte" required>
       </div>
       <div class="form-group">
         <label for="opcio2"> Opció 2 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio2" id="opcio2" aria-describedby="opcio2" placeholder="Opció 2" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio2"  aria-describedby="opcio2" placeholder="Opció 2" required>
       </div>
       <div class="form-group">
         <label for="opcio3"> Opció 3 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio3" id="opcio3" aria-describedby="opcio3" placeholder="Opció 3" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio3"  aria-describedby="opcio3" placeholder="Opció 3" required>
       </div>
       <div class="form-group">
         <label for="opcio4"> Opció 4 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio4" id="opcio4" aria-describedby="opcio4" placeholder="Opció 4" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio4"  aria-describedby="opcio4" placeholder="Opció 4" required>
       </div>
       <div class="form-group">
         <label for="opcio5"> Opció 5 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio5" id="opcio5" aria-describedby="opcio5" placeholder="Opció 5" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio5"  aria-describedby="opcio5" placeholder="Opció 5" required>
       </div>
       <div class="form-group">
         <label for="opcio6" maxlength="10" > Opció 6 </label>
-        <input type="text" class="form-control" name="opcio6" id="opcio6" aria-describedby="opcio6" placeholder="Opció 6" required>
+        <input type="text" class="form-control" name="opcio6"  aria-describedby="opcio6" placeholder="Opció 6" required>
       </div>
       <div class="form-group">
       <small id="textHelp" class="form-text text-muted">Recorda que el nivell d'activitat és normal com a màxim tendra 6 opcions.</small>
@@ -72,35 +72,35 @@
       @else
       <div class="form-group">
         <label for="opcio1"> Opció 1 Correcta </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio1" id="opcio1" aria-describedby="resposta" placeholder="Posa la resposta correcte" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio1"  aria-describedby="resposta" placeholder="Posa la resposta correcte" required>
       </div>
       <div class="form-group">
         <label for="opcio2"> Opció 2 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio2" id="opcio2" aria-describedby="opcio2" placeholder="Opció 2" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio2"  aria-describedby="opcio2" placeholder="Opció 2" required>
       </div>
       <div class="form-group">
         <label for="opcio3"> Opció 3 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio3" id="opcio3" aria-describedby="opcio3" placeholder="Opció 3" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio3"  aria-describedby="opcio3" placeholder="Opció 3" required>
       </div>
       <div class="form-group">
         <label for="opcio4"> Opció 4 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio4" id="opcio4" aria-describedby="opcio4" placeholder="Opció 4" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio4"  aria-describedby="opcio4" placeholder="Opció 4" required>
       </div>
       <div class="form-group">
         <label for="opcio5"> Opció 5 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio5" id="opcio5" aria-describedby="opcio5" placeholder="Opció 5" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio5"  aria-describedby="opcio5" placeholder="Opció 5" required>
       </div>
       <div class="form-group">
         <label for="opcio6"> Opció 6 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio6" id="opcio6" aria-describedby="opcio6" placeholder="Opció 6" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio6"  aria-describedby="opcio6" placeholder="Opció 6" required>
       </div>
       <div class="form-group">
         <label for="opcio7"> Opció 7 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio7" id="opcio7" aria-describedby="opcio7" placeholder="Opció 7" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio7"  aria-describedby="opcio7" placeholder="Opció 7" required>
       </div>
       <div class="form-group">
         <label for="opcio8"> Opció 8 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio8" id="opcio8" aria-describedby="opcio8" placeholder="Opció 8" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio8"  aria-describedby="opcio8" placeholder="Opció 8" required>
       </div>
       <div class="form-group">
       <small id="textHelp" maxlength="10" class="form-text text-muted">Recorda que el nivell d'activitat és dificil com a màxim tendra 8 opcions.</small>
@@ -150,90 +150,90 @@
             {{method_field('PUT')}}
             {{ csrf_field() }}
       @if(($activitats->nivell_id)==1)
-        <input type="number" class="form-control" name="id_activitat" id="id_activitat" value="{{$activitats->id}}" style="display:none">
+        <input type="number" class="form-control" name="id_activitat"  value="{{$activitats->id}}" style="display:none">
         <div class="form-group">
         <label for="opcio1"> Opció 1 Correcta </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio1" id="opcio1" aria-describedby="opcio1" placeholder="Posa la resposta correcte" value="{{$Exercici->resposta}}" required >
+        <input type="text" maxlength="10" class="form-control" name="opcio1"  aria-describedby="opcio1" placeholder="Posa la resposta correcte" value="{{$Exercici->resposta}}" required >
       </div>
       <div class="form-group">
         <label for="opcio2"> Opció 2 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio2" id="opcio2" aria-describedby="opcio2" placeholder="Opció 2" value="{{$Exercici->opcio1}}" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio2"  aria-describedby="opcio2" placeholder="Opció 2" value="{{$Exercici->opcio1}}" required>
       </div>
       <div class="form-group">
         <label for="opcio3"> Opció 3 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio3" id="opcio3" aria-describedby="opcio3" placeholder="Opció 3" value="{{$Exercici->opcio2}}" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio3"  aria-describedby="opcio3" placeholder="Opció 3" value="{{$Exercici->opcio2}}" required>
       </div>
       <div class="form-group">
         <label for="opcio4"> Opció 4 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio4" id="opcio4" aria-describedby="opcio4" placeholder="Opció 4" value="{{$Exercici->opcio3}}" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio4"  aria-describedby="opcio4" placeholder="Opció 4" value="{{$Exercici->opcio3}}" required>
       </div>
       <div class="form-group">
       <small id="textHelp" class="form-text text-muted">Recorda que el nivell d'activitat és fàcil com a màxim tendra 4 opcions.</small>
       </div>
       <button class="btn btn-primary" type="submit" value="Submit" >Guardar</button>
       @elseif(($activitats->nivell_id)==2)
-        <input type="number" class="form-control" name="id_activitat" id="id_activitat" value="{{$activitats->id}}" style="display:none">
+        <input type="number" class="form-control" name="id_activitat"  value="{{$activitats->id}}" style="display:none">
         <div class="form-group">
         <label for="opcio1"> Opció 1 Correcta </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio1" id="opcio1" aria-describedby="opcio1" placeholder="Posa la resposta correcte" value="{{$Exercici->resposta}}" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio1"  aria-describedby="opcio1" placeholder="Posa la resposta correcte" value="{{$Exercici->resposta}}" required>
       </div>
       <div class="form-group">
         <label for="opcio2"> Opció 2 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio2" id="opcio2" aria-describedby="opcio2" placeholder="Opció 2"  value="{{$Exercici->opcio1}}" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio2"  aria-describedby="opcio2" placeholder="Opció 2"  value="{{$Exercici->opcio1}}" required>
       </div>
       <div class="form-group">
         <label for="opcio3"> Opció 3 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio3" id="opcio3" aria-describedby="opcio3" placeholder="Opció 3" value="{{$Exercici->opcio2}}" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio3"  aria-describedby="opcio3" placeholder="Opció 3" value="{{$Exercici->opcio2}}" required>
       </div>
       <div class="form-group">
         <label for="opcio4"> Opció 4 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio4" id="opcio4" aria-describedby="opcio4" placeholder="Opció 4" value="{{$Exercici->opcio3}}" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio4"  aria-describedby="opcio4" placeholder="Opció 4" value="{{$Exercici->opcio3}}" required>
       </div>
       <div class="form-group">
         <label for="opcio5"> Opció 5 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio5" id="opcio5" aria-describedby="opcio5" placeholder="Opció 5" value="{{$Exercici->opcio4}}" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio5"  aria-describedby="opcio5" placeholder="Opció 5" value="{{$Exercici->opcio4}}" required>
       </div>
       <div class="form-group">
         <label for="opcio6"> Opció 6 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio6" id="opcio6" aria-describedby="opcio6" placeholder="Opció 6" value="{{$Exercici->opcio5}}" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio6"  aria-describedby="opcio6" placeholder="Opció 6" value="{{$Exercici->opcio5}}" required>
       </div>
       <div class="form-group">
       <small id="textHelp" class="form-text text-muted">Recorda que el nivell d'activitat és normal com a màxim tendra 6 opcions.</small>
       </div>
       <button class="btn btn-primary" type="submit" value="Submit" >Guardar</button>
       @else
-        <input type="number" class="form-control" name="id_activitat" id="id_activitat" value="{{$activitats->id}}" style="display:none">
+        <input type="number" class="form-control" name="id_activitat"  value="{{$activitats->id}}" style="display:none">
         <div class="form-group">
         <label for="opcio1"> Opció 1 Correcta </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio1" id="opcio1" aria-describedby="opcio1" placeholder="Posa la resposta correcte" value="{{$Exercici->resposta}}" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio1"  aria-describedby="opcio1" placeholder="Posa la resposta correcte" value="{{$Exercici->resposta}}" required>
       </div>
       <div class="form-group">
         <label for="opcio2"> Opció 2 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio2" id="opcio2" aria-describedby="opcio2" placeholder="Opció 2" value="{{$Exercici->opcio1}}" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio2"  aria-describedby="opcio2" placeholder="Opció 2" value="{{$Exercici->opcio1}}" required>
       </div>
       <div class="form-group">
         <label for="opcio3"> Opció 3 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio3" id="opcio3" aria-describedby="opcio3" placeholder="Opció 3" value="{{$Exercici->opcio2}}" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio3"  aria-describedby="opcio3" placeholder="Opció 3" value="{{$Exercici->opcio2}}" required>
       </div>
       <div class="form-group">
         <label for="opcio4"> Opció 4 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio4" id="opcio4" aria-describedby="opcio4" placeholder="Opció 4" value="{{$Exercici->opcio3}}" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio4"  aria-describedby="opcio4" placeholder="Opció 4" value="{{$Exercici->opcio3}}" required>
       </div>
       <div class="form-group">
         <label for="opcio5"> Opció 5 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio5" id="opcio5" aria-describedby="opcio5" placeholder="Opció 5" value="{{$Exercici->opcio4}}" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio5"  aria-describedby="opcio5" placeholder="Opció 5" value="{{$Exercici->opcio4}}" required>
       </div>
       <div class="form-group">
         <label for="opcio6"> Opció 6 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio6" id="opcio6" aria-describedby="opcio6" placeholder="Opció 6" value="{{$Exercici->opcio5}}" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio6"  aria-describedby="opcio6" placeholder="Opció 6" value="{{$Exercici->opcio5}}" required>
       </div>
       <div class="form-group">
         <label for="opcio7"> Opció 7 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio7" id="opcio7" aria-describedby="opcio7" placeholder="Opció 7" value="{{$Exercici->opcio6}}" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio7"  aria-describedby="opcio7" placeholder="Opció 7" value="{{$Exercici->opcio6}}" required>
       </div>
       <div class="form-group">
         <label for="opcio8"> Opció 8 </label>
-        <input type="text" maxlength="10" class="form-control" name="opcio8" id="opcio8" aria-describedby="opcio8" placeholder="Opció 8" value="{{$Exercici->opcio7}}" required>
+        <input type="text" maxlength="10" class="form-control" name="opcio8"  aria-describedby="opcio8" placeholder="Opció 8" value="{{$Exercici->opcio7}}" required>
       </div>
       <div class="form-group">
       <small id="textHelp" class="form-text text-muted">Recorda que el nivell d'activitat és dificil com a màxim tendra 6 opcions.</small>

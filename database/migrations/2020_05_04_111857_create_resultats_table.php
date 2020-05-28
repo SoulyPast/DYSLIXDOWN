@@ -18,8 +18,8 @@ class CreateResultatsTable extends Migration
             $table->Integer('puntuacio');
             $table->unsignedBigInteger('user_id')->unisgned();
             $table->unsignedInteger('activitat_id')->unisgned();
-            $table->text('eroors');
-            $table->text('correctes');
+            $table->text('eroors')->nullable();
+            $table->text('correctes')->nullable();
             $table->timestamps();
         });
 

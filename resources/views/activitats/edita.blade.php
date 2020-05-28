@@ -26,11 +26,17 @@
                     <textarea type="text" name="descripcio" id="descripcio" class="form-control" value="">{{$activitat->descripcio_activiatat}}</textarea>
 					</div>
 
+
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Privacitat de l'activitat :</label>
                         <select class="form-control select"  name="estat" id="estat" >
-                        <option> Public </option>
-                        <option> Privat </option>
+                        @if($activitat->public)
+                        <option>Publica</option>
+                        <option>Privada</option>
+                        @else
+                        <option>Privada</option>
+                        <option>Publica</option>
+                        @endif
                         </select>
                     </div>
                     <input type="number" name="tipus" id="tipus" class="form-control none" value="{{$activitat->tipus_id}}" >
